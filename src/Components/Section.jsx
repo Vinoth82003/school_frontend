@@ -1,12 +1,15 @@
 import React from "react";
 import Header from "./Header";
 import Admin from "./Admin";
+import "../css/section.css";
 
 const Section = () => {
   return (
     <>
-      <Header />
-      <Admin />
+      <section className="main_section">
+        <Header />
+        <Admin />
+      </section>
     </>
   );
 };
