@@ -11,10 +11,11 @@ import Chart from "chart.js/auto";
 const Admin = () => {
   const EarningsChart = () => {
     const chartRef = useRef(null);
+    const chartId = "earnings-chart"; // Unique ID for the canvas
 
     useEffect(() => {
       const ctx = chartRef.current.getContext("2d");
-      new Chart(ctx, {
+      const myChart = new Chart(ctx, {
         type: "line",
         data: {
           labels: [
@@ -34,13 +35,13 @@ const Admin = () => {
           datasets: [
             {
               label: "Total Collections",
-              data: [0, 0, 0, 0, 0, 0, 150000, 0, 0, 0, 0, 0], // Assuming 150000 collected in Jul
+              data: [1000, 0, 0, 0, 0, 20000, 150000, 0, 0, 0, 0, 30000], // Assuming 150000 collected in Jul
               borderColor: "blue",
               fill: false,
             },
             {
               label: "Fees Collections",
-              data: [0, 0, 0, 0, 0, 0, 100000, 0, 0, 0, 0, 0], // Assuming 100000 collected in Jul
+              data: [0, 10010, 0, 0, 0, 0, 100000, 0, 0, 12900, 0, 0], // Assuming 100000 collected in Jul
               borderColor: "red",
               fill: false,
             },
@@ -67,9 +68,14 @@ const Admin = () => {
           },
         },
       });
+
+      return () => {
+        // Cleanup function to destroy the chart when component unmounts
+        myChart.destroy();
+      };
     }, []);
 
-    return <canvas ref={chartRef} />;
+    return <canvas id={chartId} ref={chartRef} />;
   };
 
   return (
