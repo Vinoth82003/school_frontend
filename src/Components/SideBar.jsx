@@ -27,7 +27,7 @@ import { faList12 } from "@fortawesome/free-solid-svg-icons/faList12";
 const SideBar = () => {
   const value = useContext(AppContext);
   const handleSideMenu = (menuName) => {
-    value.setactiveBar(menuName);
+    value.setactiveBar(menuName.toLowerCase());
     value.setCurrentPath([menuName]);
   };
 

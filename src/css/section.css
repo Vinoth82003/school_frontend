@@ -33,3 +33,29 @@
 .pathClick:last-child {
   color: blue;
 }
+
+@media screen and (max-width: 585px) {
+  .main_section.active,
+  .main_section {
+    left: 0;
+    width: calc(100vw);
+  }
+
+  .sidebar.active .sidebar,
+  .sidebar.active {
+    width: 0;
+    overflow: hidden;
+  }
+
+  .sidebar {
+    width: 270px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .counter {
+    width: 100%;
+  }
+}

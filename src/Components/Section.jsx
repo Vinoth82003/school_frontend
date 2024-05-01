@@ -8,7 +8,7 @@ const Section = () => {
   let paths = value.currentPath;
 
   const handlePath = (path) => {
-    value.setactiveBar(path);
+    value.setactiveBar(path.toString().toLowerCase());
     value.setCurrentPath([path]);
   };
   const handleLastPath = () => {
@@ -20,7 +20,9 @@ const Section = () => {
         <header className="head">
           <h1 className="dashborad_name">Admin dashboard</h1>
           <div className="path">
-            <p className="pathClick">Home</p>
+            <p className="pathClick" onClick={() => handlePath(["dashboard"])}>
+              Home
+            </p>
             {paths.map((path, index) => {
               return (
                 <p
