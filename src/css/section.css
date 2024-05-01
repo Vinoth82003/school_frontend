@@ -4,5 +4,22 @@
   left: 275px;
   width: calc(100vw - 275px);
   min-height: calc(100vh - 75px);
-  padding: 10px;    
+  padding: 10px;
+}
+
+.dashborad_name {
+  text-transform: capitalize;
+  color: rgb(63, 63, 63);
+}
+
+.path {
+  display: flex;
+  text-transform: capitalize;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.pathClick:last-child {
+  color: blue;
 }
