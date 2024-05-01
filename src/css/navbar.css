@@ -401,3 +401,29 @@ body {
     height: inherit;
   }
 }
+
+.logo,
+.name {
+  width: 100%;
+}
+
+.logo.active,
+.name.active {
+  transition: all 0.3s;
+  width: 0;
+  overflow: hidden;
+}
+
+.sidebar_toggle {
+  background: #ffa500;
+  min-width: 30px;
+  min-height: 30px;
+  max-width: 30px;
+  max-height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+}

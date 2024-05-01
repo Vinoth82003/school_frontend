@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import logo from "../img/logo.jpg";
 import admin_logo from "../img/admin.jpg";
 import "../css/navbar.css";
@@ -11,6 +11,7 @@ import {
   faEnvelope,
   faMessage,
   faSignOut,
+  faTimes,
   faUserGear,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
@@ -18,8 +19,11 @@ import stud1 from "../img/student11.png";
 import stud2 from "../img/student12.png";
 import stud3 from "../img/student13.png";
 import stud4 from "../img/student11 (1).png";
+import { AppContext } from "../App";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons/faArrowRight";
 
 const Navbar = () => {
+  const value = useContext(AppContext);
   const [activeMenu, setActiveMenu] = useState(null);
   const [isActive, setActive] = useState(false);
 
@@ -31,10 +35,20 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <div className="school_name">
-          <div className="logo">
+          <div className={`logo ${value.isSidebar ? "active" : ""}`}>
             <img src={logo} alt="school logo" />
           </div>
-          <h1 className="name">MTMHSS</h1>
+          <h1 className={`name ${value.isSidebar ? "active" : ""}`}>MTMHSS</h1>
+          <div
+            className={`sidebar_toggle ${value.isSidebar ? "active" : ""}`}
+            onClick={() => value.setSidebar(!value.isSidebar)}
+          >
+            {value.isSidebar ? (
+              <FontAwesomeIcon icon={faArrowRight} />
+            ) : (
+              <FontAwesomeIcon icon={faTimes} />
+            )}
+          </div>
         </div>
         <button
           className={`toggle_button ${isActive ? "active" : ""}`}
