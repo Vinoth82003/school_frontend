@@ -1,0 +1,403 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: unset;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: #e4e4e4;
+}
+
+.navbar {
+  position: absolute;
+  max-width: calc(100vw);
+  width: 100%;
+  background: #fff;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 15px;
+}
+
+.school_name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.school_name img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 7px #e4e4e4;
+}
+
+.school_name h1 {
+  font-size: 40px;
+  color: rgb(87, 97, 149);
+}
+
+.nav_menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.menu_list {
+  position: relative;
+  list-style: none;
+}
+
+.inner_menu_list {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.profile_name {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.user_name,
+.user_role {
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+.user_role {
+  color: #656565;
+}
+
+.profile_pic img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.menu_option_box {
+  display: none;
+}
+
+@keyframes move-top {
+  0% {
+    margin-top: 50px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+.menu_option_box.active {
+  display: block;
+  position: absolute;
+  top: 58px;
+  margin-left: -200px;
+  width: 250px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  background: #fff;
+  box-shadow: 2px 2px 5px #909090;
+  animation: move-top 0.2s ease-in forwards;
+}
+
+.inner_menu_list.profile_menu {
+  --clr: #ffa500;
+}
+
+.inner_menu_list.messages {
+  --clr: #04b7b7;
+}
+
+.inner_menu_list.notification {
+  --clr: #ff0000;
+}
+
+.menu_option_box.active::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  border-top: 15px solid #fff;
+  border-right: 15px solid #fff;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 10;
+}
+
+.box_title {
+  background: var(--clr);
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+}
+
+.box_messages {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  transition: all 0.3s;
+  width: 100%;
+  cursor: pointer;
+}
+
+.message .menu_icon {
+  width: 20px;
+}
+
+.message:hover {
+  background: #f1f1f1;
+}
+
+.small_menu {
+  width: 50px;
+  height: 43px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.small_menu .menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.small_menu .menu_icon {
+  font-size: 20px;
+}
+
+.small_menu .count {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: var(--clr);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #fff;
+  box-shadow: 0px 0px 10px #656565;
+  border: 2px solid #fff;
+  top: -15px;
+  right: -15px;
+}
+
+.inner_message {
+  max-height: 100px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+
+.sender_pic {
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  background: purple;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.sender_pic img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.message_title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+  text-transform: capitalize;
+}
+
+.time {
+  font-size: 12px;
+  font-weight: 600;
+  color: #909090;
+}
+
+.small_message_content {
+  font-size: 12px;
+  text-align: justify;
+  padding: 0 5px;
+}
+
+.message:nth-child(2n + 1) .sender_pic {
+  background: purple;
+}
+
+.message:nth-child(2n + 2) .sender_pic {
+  background: rgb(230, 149, 0);
+}
+
+.message:nth-child(2n + 3) .sender_pic {
+  background: rgb(5, 147, 19);
+}
+
+.message:nth-child(2n + 4) .sender_pic {
+  background: rgb(201, 137, 74);
+}
+
+.notification .inner_message {
+  align-items: center;
+  gap: 10px;
+}
+
+.notification .inner_message p {
+  color: #4a4a4a;
+  font-weight: 600;
+}
+
+.menu_option_box.active::-webkit-scrollbar-track {
+  background: transparent;
+}
+.menu_option_box.active::-webkit-scrollbar-thumb {
+  background: var(--clr);
+}
+
+.toggle_button {
+  display: none;
+}
+
+@media screen and (max-width: 585px) {
+  .school_name h1 {
+    font-size: 30px;
+  }
+  .school_name img {
+    width: 50px;
+    height: 50px;
+  }
+  .toggle_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .toggle_button .button_line {
+    width: 66%;
+    height: 3px;
+    background: blue;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: -15px;
+    transition: all 0.3s;
+  }
+
+  .button_line:nth-child(2) {
+    margin-top: 0px;
+  }
+  .button_line:nth-child(3) {
+    margin-top: 15px;
+  }
+
+  .toggle_button.active .button_line {
+    background: red;
+    margin: 0;
+  }
+
+  .toggle_button.active .button_line:nth-child(2) {
+    transform: translateX(-50px);
+  }
+
+  .toggle_button.active .button_line:nth-child(1) {
+    transform: rotate(45deg);
+  }
+
+  .toggle_button.active .button_line:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  .nav_menu {
+    display: none;
+  }
+  .nav_menu.active {
+    display: flex;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: #fff;
+    padding: 10px 0;
+    transition: all 0.3s;
+  }
+
+  .menu_option_box.active {
+    position: relative;
+    top: 0;
+    margin: 0;
+    right: 0;
+    animation: none;
+    width: 100%;
+  }
+
+  li.menu_list,
+  .inner_menu_list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inner_menu_list {
+    width: 90%;
+    margin-top: 15px;
+  }
+
+  .small_menu {
+    height: inherit;
+  }
+}
