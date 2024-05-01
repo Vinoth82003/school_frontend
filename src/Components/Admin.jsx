@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "../css/admin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -6,8 +6,72 @@ import {
   faRefresh,
   faUserGraduate,
 } from "@fortawesome/free-solid-svg-icons";
+import Chart from "chart.js/auto";
 
 const Admin = () => {
+  const EarningsChart = () => {
+    const chartRef = useRef(null);
+
+    useEffect(() => {
+      const ctx = chartRef.current.getContext("2d");
+      new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ],
+          datasets: [
+            {
+              label: "Total Collections",
+              data: [0, 0, 0, 0, 0, 0, 150000, 0, 0, 0, 0, 0], // Assuming 150000 collected in Jul
+              borderColor: "blue",
+              fill: false,
+            },
+            {
+              label: "Fees Collections",
+              data: [0, 0, 0, 0, 0, 0, 100000, 0, 0, 0, 0, 0], // Assuming 100000 collected in Jul
+              borderColor: "red",
+              fill: false,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              display: true,
+              title: {
+                display: true,
+                text: "Month",
+              },
+            },
+            y: {
+              display: true,
+              title: {
+                display: true,
+                text: "Amount (Rs)",
+              },
+            },
+          },
+        },
+      });
+    }, []);
+
+    return <canvas ref={chartRef} />;
+  };
+
   return (
     <>
       <main className="admin_page">
@@ -62,23 +126,7 @@ const Admin = () => {
                 </div>
               </div>
             </div>
-            <div className="chart_cetgory">
-              <div className="category cat-1">
-                <div className="color"></div>
-                <p>Total Collections</p>
-              </div>
-              <div className="category cat-2">
-                <div className="color"></div>
-                <p>Fees Collections</p>
-              </div>
-              <select name="year" id="year">
-                <option value="2022" selected>
-                  2022
-                </option>
-                <option value="2023">2023</option>
-                <option value="2024">2024</option>
-              </select>
-            </div>
+            <EarningsChart />
           </div>
           <div className="chart expense">
             <div className="chart_header">
