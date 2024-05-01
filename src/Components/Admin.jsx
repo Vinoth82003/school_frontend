@@ -78,6 +78,55 @@ const Admin = () => {
     return <canvas id={chartId} ref={chartRef} />;
   };
 
+  const ExpenseChart = () => {
+    const chartRef = useRef(null);
+    const chartId = "expense-chart"; // Unique ID for the canvas
+
+    useEffect(() => {
+      const ctx = chartRef.current.getContext("2d");
+      const myChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Jan", "Feb", "Mar"],
+          datasets: [
+            {
+              label: "Expenses",
+              data: [50000, 60000, 70000], // Sample expenses for Jan, Feb, Mar
+              backgroundColor: ["purple", "blue", "orange"],
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              display: true,
+              title: {
+                display: true,
+                text: "Month",
+              },
+            },
+            y: {
+              display: true,
+              title: {
+                display: true,
+                text: "Amount (Rs)",
+              },
+            },
+          },
+        },
+      });
+
+      return () => {
+        // Cleanup function to destroy the chart when component unmounts
+        myChart.destroy();
+      };
+    }, []);
+
+    return <canvas id={chartId} ref={chartRef} />;
+  };
+
   return (
     <>
       <main className="admin_page">
@@ -146,23 +195,7 @@ const Admin = () => {
                 </div>
               </div>
             </div>
-            <div className="chart_cetgory">
-              <div className="category cat-1">
-                <div className="color"></div>
-                <p>Jan 2024</p>
-              </div>
-              <div className="category cat-2">
-                <div className="color"></div>
-                <p>Feb 2024</p>
-              </div>
-              <select name="year" id="year">
-                <option value="mar" selected>
-                  Mar
-                </option>
-                <option value="apr">Apr</option>
-                <option value="may">May</option>
-              </select>
-            </div>
+            <ExpenseChart />
           </div>
         </section>
       </main>
