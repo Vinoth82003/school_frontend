@@ -16,7 +16,7 @@ const Section = () => {
   };
   return (
     <>
-      <section className="main_section">
+      <section className={`main_section ${value.isSidebar ? "active" : ""}`}>
         <header className="head">
           <h1 className="dashborad_name">Admin dashboard</h1>
           <div className="path">

@@ -5,6 +5,12 @@
   width: calc(100vw - 275px);
   min-height: calc(100vh - 75px);
   padding: 10px;
+  transition: all 0.3s;
+}
+
+.main_section.active {
+  left: 75px;
+  width: calc(100vw - 75px);
 }
 
 .dashborad_name {

@@ -1,0 +1,60 @@
+.counter_box {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.counter {
+  background: #fff;
+  padding: 10px 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #aaaaaa;
+}
+
+.counter.student {
+  --bg: #c8fac8;
+  --clr: #008000;
+}
+
+.counter.teachers {
+  --bg: #fdd5fd;
+  --clr: #800080;
+}
+
+.counter.parents {
+  --bg: #ffeac2;
+  --clr: #c27f01;
+}
+
+.counter_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--clr);
+  font-size: 30px;
+}
+
+.counter_details {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.counter_name {
+  color: #797878;
+  text-transform: capitalize;
+}
+
+.counter_count {
+  text-align: center;
+}
