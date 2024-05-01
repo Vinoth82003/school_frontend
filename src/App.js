@@ -7,7 +7,7 @@ export const AppContext = createContext();
 function App() {
   const [isSidebar, setSidebar] = useState(false);
   const [activeBar, setactiveBar] = useState("dashboard");
-  const [currentPath, setCurrentPath] = useState(["Admin"]);
+  const [currentPath, setCurrentPath] = useState(["dashboard"]);
   const value = {
     isSidebar,
     setSidebar,

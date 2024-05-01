@@ -1,7 +1,11 @@
 import React from "react";
 import "../css/admin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserGraduate } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCloudDownloadAlt,
+  faRefresh,
+  faUserGraduate,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Admin = () => {
   return (
@@ -45,6 +49,68 @@ const Admin = () => {
             </div>
           </li>
         </ul>
+        <section className="chart_containers">
+          <div className="chart earning">
+            <div className="chart_header">
+              <h3>Earnings</h3>
+              <div className="options">
+                <div className="refresh">
+                  <FontAwesomeIcon icon={faRefresh} />
+                </div>
+                <div className="download">
+                  <FontAwesomeIcon icon={faCloudDownloadAlt} />
+                </div>
+              </div>
+            </div>
+            <div className="chart_cetgory">
+              <div className="category cat-1">
+                <div className="color"></div>
+                <p>Total Collections</p>
+              </div>
+              <div className="category cat-2">
+                <div className="color"></div>
+                <p>Fees Collections</p>
+              </div>
+              <select name="year" id="year">
+                <option value="2022" selected>
+                  2022
+                </option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+              </select>
+            </div>
+          </div>
+          <div className="chart expense">
+            <div className="chart_header">
+              <h3>Expenses</h3>
+              <div className="options">
+                <div className="refresh">
+                  <FontAwesomeIcon icon={faRefresh} />
+                </div>
+                <div className="download">
+                  <FontAwesomeIcon icon={faCloudDownloadAlt} />
+                </div>
+              </div>
+            </div>
+            <div className="chart_cetgory">
+              <div className="category cat-1">
+                <div className="color"></div>
+                <p>Jan 2024</p>
+              </div>
+              <div className="category cat-2">
+                <div className="color"></div>
+                <p>Feb 2024</p>
+              </div>
+              <select name="year" id="year">
+                <option value="mar" selected>
+                  Mar
+                </option>
+                <option value="apr">Apr</option>
+                <option value="may">May</option>
+              </select>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );
