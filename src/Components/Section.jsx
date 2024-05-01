@@ -5,6 +5,15 @@ import { AppContext } from "../App";
 
 const Section = () => {
   const value = useContext(AppContext);
+  let paths = value.currentPath;
+
+  const handlePath = (path) => {
+    value.setactiveBar(path);
+    value.setCurrentPath([path]);
+  };
+  const handleLastPath = () => {
+    console.log("last path clicked");
+  };
   return (
     <>
       <section className="main_section">
@@ -12,8 +21,23 @@ const Section = () => {
           <h1 className="dashborad_name">Admin dashboard</h1>
           <div className="path">
             <p className="pathClick">Home</p>
-            {">"}
-            <p className="pathClick">{value.currentPath}</p>
+            {paths.map((path, index) => {
+              return (
+                <p
+                  key={index}
+                  className="pathClick"
+                  onClick={
+                    index != 1
+                      ? () => {
+                          handlePath(path);
+                        }
+                      : handleLastPath()
+                  }
+                >
+                  / {path}
+                </p>
+              );
+            })}
           </div>
         </header>
         <Admin />

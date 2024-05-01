@@ -20,6 +20,10 @@
   margin-top: 5px;
 }
 
+.pathClick {
+  cursor: pointer;
+}
+
 .pathClick:last-child {
   color: blue;
 }

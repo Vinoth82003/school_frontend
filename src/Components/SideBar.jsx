@@ -26,20 +26,29 @@ import { faList12 } from "@fortawesome/free-solid-svg-icons/faList12";
 
 const SideBar = () => {
   const value = useContext(AppContext);
-  const [activeBar, setactiveBar] = useState("dashboard");
   const handleSideMenu = (menuName) => {
-    setactiveBar(menuName);
-    value.setCurrentPath(menuName);
+    value.setactiveBar(menuName);
+    value.setCurrentPath([menuName]);
   };
+
+  const handleMenuClick = (menuName) => {
+    value.setCurrentPath(menuName);
+    console.log(value.currentPath);
+  };
+
   return (
     <>
       <aside className={`sidebar ${value.isSidebar ? "active" : ""}`}>
         <ul className="sidebar">
           <li
-            className={`side_menu ${activeBar === "dashboard" ? "active" : ""}`}
-            onClick={() => handleSideMenu("dashboard")}
+            className={`side_menu ${
+              value.activeBar === "dashboard" ? "active" : ""
+            }`}
           >
-            <div className="inner_menu">
+            <div
+              className="inner_menu"
+              onClick={() => handleSideMenu("dashboard")}
+            >
               <div className="side_icon">
                 <FontAwesomeIcon icon={faDashboard} />
               </div>
@@ -47,17 +56,24 @@ const SideBar = () => {
             </div>
           </li>
           <li
-            className={`side_menu ${activeBar === "students" ? "active" : ""}`}
-            onClick={() => handleSideMenu("students")}
+            className={`side_menu ${
+              value.activeBar === "students" ? "active" : ""
+            }`}
           >
-            <div className="inner_menu">
+            <div
+              className="inner_menu"
+              onClick={() => handleSideMenu("students")}
+            >
               <div className="side_icon">
                 <FontAwesomeIcon icon={faGraduationCap} />
               </div>
               <div className="side_text">Students</div>
             </div>
             <ul className="sub_menu">
-              <li className="sub_menu_li">
+              <li
+                className="sub_menu_li"
+                onClick={() => handleMenuClick(["students", "all student"])}
+              >
                 <div className="inner_submenu">
                   <div className="submenu_icon">
                     <FontAwesomeIcon icon={faUserGraduate} />
@@ -65,7 +81,10 @@ const SideBar = () => {
                   <p className="submenu_text">All Students</p>
                 </div>
               </li>
-              <li className="sub_menu_li">
+              <li
+                className="sub_menu_li"
+                onClick={() => handleMenuClick(["students", "add student"])}
+              >
                 <div className="inner_submenu">
                   <div className="submenu_icon">
                     <FontAwesomeIcon icon={faUserPlus} />
@@ -73,7 +92,12 @@ const SideBar = () => {
                   <p className="submenu_text">Admission Form</p>
                 </div>
               </li>
-              <li className="sub_menu_li">
+              <li
+                className="sub_menu_li"
+                onClick={() =>
+                  handleMenuClick(["students", "Student Promotion"])
+                }
+              >
                 <div className="inner_submenu">
                   <div className="submenu_icon">
                     <FontAwesomeIcon icon={faUserCheck} />
@@ -84,17 +108,24 @@ const SideBar = () => {
             </ul>
           </li>
           <li
-            className={`side_menu ${activeBar === "teachers" ? "active" : ""}`}
-            onClick={() => handleSideMenu("teachers")}
+            className={`side_menu ${
+              value.activeBar === "teachers" ? "active" : ""
+            }`}
           >
-            <div className="inner_menu">
+            <div
+              className="inner_menu"
+              onClick={() => handleSideMenu("teachers")}
+            >
               <div className="side_icon">
                 <FontAwesomeIcon icon={faChalkboardTeacher} />
               </div>
               <div className="side_text">Teachers</div>
             </div>
             <ul className="sub_menu">
-              <li className="sub_menu_li">
+              <li
+                className="sub_menu_li"
+                onClick={() => handleMenuClick(["teachers", "all teachers"])}
+              >
                 <div className="inner_submenu">
                   <div className="submenu_icon">
                     <FontAwesomeIcon icon={faPeopleGroup} />
@@ -102,7 +133,10 @@ const SideBar = () => {
                   <p className="submenu_text">All Teachers</p>
                 </div>
               </li>
-              <li className="sub_menu_li">
+              <li
+                className="sub_menu_li"
+                onClick={() => handleMenuClick(["teachers", "add teachers"])}
+              >
                 <div className="inner_submenu">
                   <div className="submenu_icon">
                     <FontAwesomeIcon icon={faUserPlus} />
@@ -110,7 +144,10 @@ const SideBar = () => {
                   <p className="submenu_text">Add Teacher</p>
                 </div>
               </li>
-              <li className="sub_menu_li">
+              <li
+                className="sub_menu_li"
+                onClick={() => handleMenuClick(["teachers", "payment"])}
+              >
                 <div className="inner_submenu">
                   <div className="submenu_icon">
                     <FontAwesomeIcon icon={faMoneyBills} />
@@ -121,17 +158,24 @@ const SideBar = () => {
             </ul>
           </li>
           <li
-            className={`side_menu ${activeBar === "parents" ? "active" : ""}`}
-            onClick={() => handleSideMenu("parents")}
+            className={`side_menu ${
+              value.activeBar === "parents" ? "active" : ""
+            }`}
           >
-            <div className="inner_menu">
+            <div
+              className="inner_menu"
+              onClick={() => handleSideMenu("parents")}
+            >
               <div className="side_icon">
                 <FontAwesomeIcon icon={faUserGroup} />
               </div>
               <div className="side_text">Parents</div>
             </div>
             <ul className="sub_menu">
-              <li className="sub_menu_li">
+              <li
+                className="sub_menu_li"
+                onClick={() => handleMenuClick(["parents", "all parents"])}
+              >
                 <div className="inner_submenu">
                   <div className="submenu_icon">
                     <FontAwesomeIcon icon={faPeopleGroup} />
@@ -139,7 +183,10 @@ const SideBar = () => {
                   <p className="submenu_text">All Parents</p>
                 </div>
               </li>
-              <li className="sub_menu_li">
+              <li
+                className="sub_menu_li"
+                onClick={() => handleMenuClick(["parents", "add parents"])}
+              >
                 <div className="inner_submenu">
                   <div className="submenu_icon">
                     <FontAwesomeIcon icon={faUserPlus} />
@@ -147,7 +194,10 @@ const SideBar = () => {
                   <p className="submenu_text">Add Parent</p>
                 </div>
               </li>
-              <li className="sub_menu_li">
+              <li
+                className="sub_menu_li"
+                onClick={() => handleMenuClick(["parents", "meeting"])}
+              >
                 <div className="inner_submenu">
                   <div className="submenu_icon">
                     <FontAwesomeIcon icon={faUsers} />
@@ -158,17 +208,26 @@ const SideBar = () => {
             </ul>
           </li>
           <li
-            className={`side_menu ${activeBar === "acconunt" ? "active" : ""}`}
-            onClick={() => handleSideMenu("acconunt")}
+            className={`side_menu ${
+              value.activeBar === "acconunt" ? "active" : ""
+            }`}
           >
-            <div className="inner_menu">
+            <div
+              className="inner_menu"
+              onClick={() => handleSideMenu("acconunt")}
+            >
               <div className="side_icon">
                 <FontAwesomeIcon icon={faCalculator} />
               </div>
               <div className="side_text">Acconunt</div>
             </div>
             <ul className="sub_menu">
-              <li className="sub_menu_li">
+              <li
+                className="sub_menu_li"
+                onClick={() =>
+                  handleMenuClick(["acconunt", "Fess Collections"])
+                }
+              >
                 <div className="inner_submenu">
                   <div className="submenu_icon">
                     <FontAwesomeIcon icon={faMoneyBillTrendUp} />
@@ -176,7 +235,10 @@ const SideBar = () => {
                   <p className="submenu_text">Fess Collections</p>
                 </div>
               </li>
-              <li className="sub_menu_li">
+              <li
+                className="sub_menu_li"
+                onClick={() => handleMenuClick(["acconunt", "Expenses"])}
+              >
                 <div className="inner_submenu">
                   <div className="submenu_icon">
                     <FontAwesomeIcon icon={faMoneyBillTransfer} />
@@ -184,7 +246,10 @@ const SideBar = () => {
                   <p className="submenu_text">Expenses</p>
                 </div>
               </li>
-              <li className="sub_menu_li">
+              <li
+                className="sub_menu_li"
+                onClick={() => handleMenuClick(["acconunt", "Add Expenses"])}
+              >
                 <div className="inner_submenu">
                   <div className="submenu_icon">
                     <FontAwesomeIcon icon={faPlus} />
@@ -195,17 +260,21 @@ const SideBar = () => {
             </ul>
           </li>
           <li
-            className={`side_menu ${activeBar === "exam" ? "active" : ""}`}
-            onClick={() => handleSideMenu("exam")}
+            className={`side_menu ${
+              value.activeBar === "exam" ? "active" : ""
+            }`}
           >
-            <div className="inner_menu">
+            <div className="inner_menu" onClick={() => handleSideMenu("exam")}>
               <div className="side_icon">
                 <FontAwesomeIcon icon={faClipboardList} />
               </div>
               <div className="side_text">Exam</div>
             </div>
             <ul className="sub_menu small_submenu">
-              <li className="sub_menu_li">
+              <li
+                className="sub_menu_li"
+                onClick={() => handleMenuClick(["exam", "all exams"])}
+              >
                 <div className="inner_submenu">
                   <div className="submenu_icon">
                     <FontAwesomeIcon icon={faList12} />
@@ -213,7 +282,10 @@ const SideBar = () => {
                   <p className="submenu_text">All Exams</p>
                 </div>
               </li>
-              <li className="sub_menu_li">
+              <li
+                className="sub_menu_li"
+                onClick={() => handleMenuClick(["exam", "Exam Scheduke"])}
+              >
                 <div className="inner_submenu">
                   <div className="submenu_icon">
                     <FontAwesomeIcon icon={faClockRotateLeft} />
@@ -224,10 +296,14 @@ const SideBar = () => {
             </ul>
           </li>
           <li
-            className={`side_menu ${activeBar === "notice" ? "active" : ""}`}
-            onClick={() => handleSideMenu("notice")}
+            className={`side_menu ${
+              value.activeBar === "notice" ? "active" : ""
+            }`}
           >
-            <div className="inner_menu">
+            <div
+              className="inner_menu"
+              onClick={() => handleSideMenu("notice")}
+            >
               <div className="side_icon">
                 <FontAwesomeIcon icon={faListDots} />
               </div>
@@ -235,7 +311,9 @@ const SideBar = () => {
             </div>
           </li>
           <li
-            className={`side_menu ${activeBar === "message" ? "active" : ""}`}
+            className={`side_menu ${
+              value.activeBar === "message" ? "active" : ""
+            }`}
             onClick={() => handleSideMenu("message")}
           >
             <div className="inner_menu">
