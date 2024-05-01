@@ -27,13 +27,17 @@ import { faList12 } from "@fortawesome/free-solid-svg-icons/faList12";
 const SideBar = () => {
   const value = useContext(AppContext);
   const [activeBar, setactiveBar] = useState("dashboard");
+  const handleSideMenu = (menuName) => {
+    setactiveBar(menuName);
+    value.setCurrentPath(menuName);
+  };
   return (
     <>
       <aside className={`sidebar ${value.isSidebar ? "active" : ""}`}>
         <ul className="sidebar">
           <li
             className={`side_menu ${activeBar === "dashboard" ? "active" : ""}`}
-            onClick={() => setactiveBar("dashboard")}
+            onClick={() => handleSideMenu("dashboard")}
           >
             <div className="inner_menu">
               <div className="side_icon">
@@ -44,7 +48,7 @@ const SideBar = () => {
           </li>
           <li
             className={`side_menu ${activeBar === "students" ? "active" : ""}`}
-            onClick={() => setactiveBar("students")}
+            onClick={() => handleSideMenu("students")}
           >
             <div className="inner_menu">
               <div className="side_icon">
@@ -81,7 +85,7 @@ const SideBar = () => {
           </li>
           <li
             className={`side_menu ${activeBar === "teachers" ? "active" : ""}`}
-            onClick={() => setactiveBar("teachers")}
+            onClick={() => handleSideMenu("teachers")}
           >
             <div className="inner_menu">
               <div className="side_icon">
@@ -118,7 +122,7 @@ const SideBar = () => {
           </li>
           <li
             className={`side_menu ${activeBar === "parents" ? "active" : ""}`}
-            onClick={() => setactiveBar("parents")}
+            onClick={() => handleSideMenu("parents")}
           >
             <div className="inner_menu">
               <div className="side_icon">
@@ -155,7 +159,7 @@ const SideBar = () => {
           </li>
           <li
             className={`side_menu ${activeBar === "acconunt" ? "active" : ""}`}
-            onClick={() => setactiveBar("acconunt")}
+            onClick={() => handleSideMenu("acconunt")}
           >
             <div className="inner_menu">
               <div className="side_icon">
@@ -192,7 +196,7 @@ const SideBar = () => {
           </li>
           <li
             className={`side_menu ${activeBar === "exam" ? "active" : ""}`}
-            onClick={() => setactiveBar("exam")}
+            onClick={() => handleSideMenu("exam")}
           >
             <div className="inner_menu">
               <div className="side_icon">
@@ -221,7 +225,7 @@ const SideBar = () => {
           </li>
           <li
             className={`side_menu ${activeBar === "notice" ? "active" : ""}`}
-            onClick={() => setactiveBar("notice")}
+            onClick={() => handleSideMenu("notice")}
           >
             <div className="inner_menu">
               <div className="side_icon">
@@ -232,7 +236,7 @@ const SideBar = () => {
           </li>
           <li
             className={`side_menu ${activeBar === "message" ? "active" : ""}`}
-            onClick={() => setactiveBar("message")}
+            onClick={() => handleSideMenu("message")}
           >
             <div className="inner_menu">
               <div className="side_icon">

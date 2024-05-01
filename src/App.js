@@ -6,7 +6,8 @@ export const AppContext = createContext();
 
 function App() {
   const [isSidebar, setSidebar] = useState(false);
-  const value = { isSidebar, setSidebar };
+  const [currentPath, setCurrentPath] = useState("Admin");
+  const value = { isSidebar, setSidebar, currentPath, setCurrentPath };
   return (
     <>
       <AppContext.Provider value={value}>

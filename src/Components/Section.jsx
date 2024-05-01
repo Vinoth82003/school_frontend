@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Admin from "./Admin";
 import "../css/section.css";
+import { AppContext } from "../App";
 
 const Section = () => {
+  const value = useContext(AppContext);
   return (
     <>
       <section className="main_section">
@@ -11,7 +13,7 @@ const Section = () => {
           <div className="path">
             <p className="pathClick">Home</p>
             {">"}
-            <p className="pathClick">Admin</p>
+            <p className="pathClick">{value.currentPath}</p>
           </div>
         </header>
         <Admin />
