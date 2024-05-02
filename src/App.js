@@ -10,7 +10,7 @@ function App() {
   const [isStudent, setStudent] = useState(false);
   const [isTeacher, setTeacher] = useState(false);
   const [isParent, setParent] = useState(false);
-  const [currentClick, setCurrentClick] = useState(["dashboard"]);
+  const [currentClick, setCurrentClick] = useState(["all student"]);
   const [activeBar, setactiveBar] = useState("dashboard");
   const [currentPath, setCurrentPath] = useState(["dashboard"]);
   const value = {

@@ -58,7 +58,6 @@ const Section = () => {
               );
             })}
           </div>
-          {active}
           {active === "dashboard" && <Admin />}
           {active === "all student" && <AllStudents />}
         </header>

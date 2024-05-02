@@ -8,6 +8,10 @@
   margin-top: 10px;
 }
 
+.allStuds_counts .counter {
+  padding: 10px 20px;
+}
+
 .counter {
   background: #fff;
   padding: 10px 15px;
@@ -36,6 +40,16 @@
 .counter.classes {
   --bg: rgb(253, 219, 219);
   --clr: red;
+}
+
+.counter.std {
+  --bg: #ffe6e6;
+  --clr: #a87676;
+}
+
+.counter.grps {
+  --bg: #3d008d30;
+  --clr: #3d008d;
 }
 
 .counter_icon {
