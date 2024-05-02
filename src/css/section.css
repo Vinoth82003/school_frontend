@@ -34,6 +34,32 @@
   color: blue;
 }
 
+.main_section .chart_containers {
+  flex-wrap: nowrap;
+}
+
+.main_section .earning {
+  flex-basis: 50%;
+}
+
+.main_section .expense {
+  flex-basis: 50%;
+}
+
+@media screen and (max-width: 940px) {
+  .main_section.active .chart_containers {
+    flex-wrap: wrap;
+  }
+
+  .main_section .chart_containers {
+    flex-wrap: wrap;
+  }
+  .main_section .earning,
+  .main_section .expense {
+    flex-basis: 100%;
+  }
+}
+
 @media screen and (max-width: 585px) {
   .main_section.active,
   .main_section {

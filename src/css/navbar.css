@@ -17,7 +17,7 @@ body {
 }
 
 .navbar {
-  position: absolute;
+  position: fixed;
   max-width: calc(100vw);
   width: 100%;
   background: #fff;
@@ -374,6 +374,9 @@ body {
     background: #fff;
     padding: 10px 0;
     transition: all 0.3s;
+    max-height: calc(100vh - 75px);
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   .menu_option_box.active {
@@ -401,6 +404,11 @@ body {
   .small_menu {
     height: inherit;
   }
+
+  /* .nav_menu.active .profile_name,
+  .nav_menu.active .menu_icon {
+    color: #fff;
+  } */
 }
 
 .logo,

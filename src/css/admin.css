@@ -68,12 +68,9 @@
   margin-top: 10px;
 }
 
-.earning {
-  flex-basis: 60%;
-}
-
+.earning,
 .expense {
-  flex-basis: 40%;
+  flex-basis: 50%;
 }
 
 .chart {
