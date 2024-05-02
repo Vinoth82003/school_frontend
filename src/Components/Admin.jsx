@@ -79,6 +79,49 @@ const Admin = () => {
     return <canvas id={chartId} ref={chartRef} />;
   };
 
+  const TeacherChart = () => {
+    const chartRef = useRef(null);
+    const chartId = "earnings-chart"; // Unique ID for the canvas
+
+    useEffect(() => {
+      const ctx = chartRef.current.getContext("2d");
+      const myChart = new Chart(ctx, {
+        type: "pie",
+        data: {
+          labels: ["Male", "Female"],
+          datasets: [
+            {
+              label: "Strength",
+              data: [790, 710], // Assuming 150000 collected in Jul
+              backgroundColor: ["#638889", "#B6C4B6"], // Male and Female colors
+              borderColor: ["#638889", "#B6C4B6"], // Border colors
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              display: false,
+            },
+            y: {
+              display: false,
+            },
+          },
+        },
+      });
+
+      return () => {
+        // Cleanup function to destroy the chart when component unmounts
+        myChart.destroy();
+      };
+    }, []);
+
+    return <canvas id={chartId} ref={chartRef} />;
+  };
+
   const StudentChart = () => {
     const chartRef = useRef(null);
     const chartId = "earnings-chart"; // Unique ID for the canvas
@@ -259,7 +302,7 @@ const Admin = () => {
           </div>
           <div className="chart expense">
             <div className="chart_header">
-              <h3>Notice Board</h3>
+              <h3>Teachers </h3>
               <div className="options">
                 <div className="refresh">
                   <FontAwesomeIcon icon={faRefresh} />
@@ -269,7 +312,7 @@ const Admin = () => {
                 </div>
               </div>
             </div>
-            <div className="notice_board"></div>
+            <TeacherChart />
           </div>
         </section>
       </main>
