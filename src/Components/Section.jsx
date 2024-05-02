@@ -7,12 +7,21 @@ const Section = () => {
   const value = useContext(AppContext);
   let paths = value.currentPath;
 
+  const active =
+    value.currentClick[0].length === 2
+      ? value.currentClick[0][1]
+      : value.currentClick[0];
+  console.log(active);
+
   const handlePath = (path) => {
     value.setactiveBar(path.toString().toLowerCase());
     value.setCurrentPath([path]);
+    if (path === "dashboard" || path === "message" || path === "notice") {
+      value.setCurrentClick([path]);
+    }
   };
-  const handleLastPath = () => {
-    console.log("last path clicked");
+  const handleLastPath = (path) => {
+    value.setCurrentClick([path]);
   };
   return (
     <>
@@ -34,11 +43,13 @@ const Section = () => {
                   key={index}
                   className="pathClick"
                   onClick={
-                    index != 1
+                    index !== 1
                       ? () => {
                           handlePath(path);
                         }
-                      : handleLastPath()
+                      : () => {
+                          handleLastPath(path);
+                        }
                   }
                 >
                   / {path}
@@ -46,8 +57,10 @@ const Section = () => {
               );
             })}
           </div>
+          {active}
+          {active === "dashboard" && <Admin />}
+          {active === "all student" && <Admin />}
         </header>
-        <Admin />
       </section>
     </>
   );

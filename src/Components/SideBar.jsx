@@ -29,11 +29,18 @@ const SideBar = () => {
   const handleSideMenu = (menuName) => {
     value.setactiveBar(menuName.toLowerCase());
     value.setCurrentPath([menuName]);
+    if (
+      menuName == "dashboard" ||
+      menuName == "message" ||
+      menuName == "notice"
+    ) {
+      value.setCurrentClick([menuName]);
+    }
   };
 
   const handleMenuClick = (menuName) => {
     value.setCurrentPath(menuName);
-    console.log(value.currentPath);
+    value.setCurrentClick([menuName]);
   };
 
   return (

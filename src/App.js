@@ -10,6 +10,7 @@ function App() {
   const [isStudent, setStudent] = useState(false);
   const [isTeacher, setTeacher] = useState(false);
   const [isParent, setParent] = useState(false);
+  const [currentClick, setCurrentClick] = useState(["dashboard"]);
   const [activeBar, setactiveBar] = useState("dashboard");
   const [currentPath, setCurrentPath] = useState(["dashboard"]);
   const value = {
@@ -27,8 +28,9 @@ function App() {
     setTeacher,
     isParent,
     setParent,
+    currentClick,
+    setCurrentClick,
   };
-  console.log(currentPath);
   return (
     <>
       <AppContext.Provider value={value}>
