@@ -6,6 +6,10 @@ export const AppContext = createContext();
 
 function App() {
   const [isSidebar, setSidebar] = useState(false);
+  const [isAdmin, setAdmin] = useState(true);
+  const [isStudent, setStudent] = useState(false);
+  const [isTeacher, setTeacher] = useState(false);
+  const [isParent, setParent] = useState(false);
   const [activeBar, setactiveBar] = useState("dashboard");
   const [currentPath, setCurrentPath] = useState(["dashboard"]);
   const value = {
@@ -15,13 +19,21 @@ function App() {
     setCurrentPath,
     activeBar,
     setactiveBar,
+    isAdmin,
+    setAdmin,
+    isStudent,
+    setStudent,
+    isTeacher,
+    setTeacher,
+    isParent,
+    setParent,
   };
   console.log(currentPath);
   return (
     <>
       <AppContext.Provider value={value}>
         <Navbar />
-        <SideBar />
+        {isAdmin && <SideBar />}
         <Section />
       </AppContext.Provider>
     </>

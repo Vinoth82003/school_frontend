@@ -39,16 +39,18 @@ const Navbar = () => {
             <img src={logo} alt="school logo" />
           </div>
           <h1 className={`name ${value.isSidebar ? "active" : ""}`}>MTMHSS</h1>
-          <div
-            className={`sidebar_toggle ${value.isSidebar ? "active" : ""}`}
-            onClick={() => value.setSidebar(!value.isSidebar)}
-          >
-            {value.isSidebar ? (
-              <FontAwesomeIcon icon={faArrowRight} />
-            ) : (
-              <FontAwesomeIcon icon={faTimes} />
-            )}
-          </div>
+          {value.isAdmin && (
+            <div
+              className={`sidebar_toggle ${value.isSidebar ? "active" : ""}`}
+              onClick={() => value.setSidebar(!value.isSidebar)}
+            >
+              {value.isSidebar ? (
+                <FontAwesomeIcon icon={faArrowRight} />
+              ) : (
+                <FontAwesomeIcon icon={faTimes} />
+              )}
+            </div>
+          )}
         </div>
         <button
           className={`toggle_button ${isActive ? "active" : ""}`}
