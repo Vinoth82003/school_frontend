@@ -87,6 +87,10 @@
   max-width: 100%;
 }
 
+canvas {
+  max-height: 350px !important;
+}
+
 .chart_header {
   display: flex;
   align-items: center;

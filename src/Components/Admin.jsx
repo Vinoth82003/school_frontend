@@ -3,6 +3,7 @@ import "../css/admin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCloudDownloadAlt,
+  faPlusCircle,
   faRefresh,
   faUserGraduate,
 } from "@fortawesome/free-solid-svg-icons";
@@ -64,6 +65,49 @@ const Admin = () => {
                 display: true,
                 text: "Amount (Rs)",
               },
+            },
+          },
+        },
+      });
+
+      return () => {
+        // Cleanup function to destroy the chart when component unmounts
+        myChart.destroy();
+      };
+    }, []);
+
+    return <canvas id={chartId} ref={chartRef} />;
+  };
+
+  const StudentChart = () => {
+    const chartRef = useRef(null);
+    const chartId = "earnings-chart"; // Unique ID for the canvas
+
+    useEffect(() => {
+      const ctx = chartRef.current.getContext("2d");
+      const myChart = new Chart(ctx, {
+        type: "pie",
+        data: {
+          labels: ["Male", "Female"],
+          datasets: [
+            {
+              label: "Strength",
+              data: [790, 710], // Assuming 150000 collected in Jul
+              backgroundColor: ["#2445b9", "#d34db6"], // Male and Female colors
+              borderColor: ["#2445b9", "#d34db6"], // Border colors
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              display: false,
+            },
+            y: {
+              display: false,
             },
           },
         },
@@ -196,6 +240,36 @@ const Admin = () => {
               </div>
             </div>
             <ExpenseChart />
+          </div>
+        </section>
+        <section className="chart_containers">
+          <div className="chart earning">
+            <div className="chart_header">
+              <h3>Students</h3>
+              <div className="options">
+                <div className="refresh">
+                  <FontAwesomeIcon icon={faRefresh} />
+                </div>
+                <div className="download">
+                  <FontAwesomeIcon icon={faCloudDownloadAlt} />
+                </div>
+              </div>
+            </div>
+            <StudentChart />
+          </div>
+          <div className="chart expense">
+            <div className="chart_header">
+              <h3>Notice Board</h3>
+              <div className="options">
+                <div className="refresh">
+                  <FontAwesomeIcon icon={faRefresh} />
+                </div>
+                <div className="download">
+                  <FontAwesomeIcon icon={faPlusCircle} />
+                </div>
+              </div>
+            </div>
+            <div className="notice_board"></div>
           </div>
         </section>
       </main>
