@@ -3,7 +3,6 @@ import "../css/admin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCloudDownloadAlt,
-  faPlusCircle,
   faRefresh,
   faUserGraduate,
 } from "@fortawesome/free-solid-svg-icons";
@@ -92,7 +91,7 @@ const Admin = () => {
           datasets: [
             {
               label: "Strength",
-              data: [790, 710], // Assuming 150000 collected in Jul
+              data: [350, 150], // Assuming 150000 collected in Jul
               backgroundColor: ["#638889", "#B6C4B6"], // Male and Female colors
               borderColor: ["#638889", "#B6C4B6"], // Border colors
               borderWidth: 1,
@@ -308,11 +307,114 @@ const Admin = () => {
                   <FontAwesomeIcon icon={faRefresh} />
                 </div>
                 <div className="download">
-                  <FontAwesomeIcon icon={faPlusCircle} />
+                  <FontAwesomeIcon icon={faCloudDownloadAlt} />
                 </div>
               </div>
             </div>
             <TeacherChart />
+          </div>
+        </section>
+        <section className="chart_containers notice_board">
+          <div className="board">
+            <div className="board_header">
+              <h2 className="board_title">Notice Board</h2>
+              <div className="options">
+                <input
+                  type="search"
+                  name="byTitle"
+                  id="byTitle"
+                  placeholder="Searcg by Title"
+                  className="input"
+                />
+                <input
+                  type="date"
+                  name="byDate"
+                  id="byDate"
+                  className="input"
+                />
+                <input
+                  type="search"
+                  name="byTeacher"
+                  id="byTeacher"
+                  placeholder="search by Teacher"
+                  className="input"
+                />
+              </div>
+            </div>
+            <ul className="board_body">
+              <li className="notice">
+                <div className="notice_header">
+                  <h4 className="notice_title">Exam date</h4>
+                  <h4 className="notice_dateTime">02/05/2024 11:00 AM</h4>
+                </div>
+                <div className="notice_body">
+                  <p className="content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Esse, at maxime odio sunt sint earum voluptas, reprehenderit
+                    incidunt harum quam, minus nemo! Aut amet necessitatibus
+                    doloremque maxime magni optio excepturi?
+                  </p>
+                </div>
+                <div className="notice_header foot">
+                  <p className="timeAgo">-/ 10 mins ago</p>
+                  <p className="postedBy">By:/ vinoth S (maths teacher)</p>
+                </div>
+              </li>
+              <li className="notice">
+                <div className="notice_header">
+                  <h4 className="notice_title">Parents Teachers meeting</h4>
+                  <h4 className="notice_dateTime">02/05/2024 11:00 AM</h4>
+                </div>
+                <div className="notice_body">
+                  <p className="content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Esse, at maxime odio sunt sint earum voluptas, reprehenderit
+                    incidunt harum quam, minus nemo! Aut amet necessitatibus
+                    doloremque maxime magni optio excepturi?
+                  </p>
+                </div>
+                <div className="notice_header foot">
+                  <p className="timeAgo">-/ 10 mins ago</p>
+                  <p className="postedBy">By:/ vinoth S (maths teacher)</p>
+                </div>
+              </li>
+              <li className="notice">
+                <div className="notice_header">
+                  <h4 className="notice_title">Exam Result date</h4>
+                  <h4 className="notice_dateTime">02/05/2024 11:00 AM</h4>
+                </div>
+                <div className="notice_body">
+                  <p className="content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Esse, at maxime odio sunt sint earum voluptas, reprehenderit
+                    incidunt harum quam, minus nemo! Aut amet necessitatibus
+                    doloremque maxime magni optio excepturi?
+                  </p>
+                </div>
+                <div className="notice_header foot">
+                  <p className="timeAgo">-/ 10 mins ago</p>
+                  <p className="postedBy">By:/ vinoth S (maths teacher)</p>
+                </div>
+              </li>
+              <li className="notice">
+                <div className="notice_header">
+                  <h4 className="notice_title">Sports day</h4> 
+                  <h4 className="notice_dateTime">02/05/2024 11:00 AM</h4>
+                </div>
+                <div className="notice_body">
+                  <p className="content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Esse, at maxime odio sunt sint earum voluptas, reprehenderit
+                    incidunt harum quam, minus nemo! Aut amet necessitatibus
+                    doloremque maxime magni optio excepturi?
+                  </p>
+                </div>
+                <div className="notice_header foot">
+                  <p className="timeAgo">-/ 10 mins ago</p>
+                  <p className="postedBy">By:/ vinoth S (maths teacher)</p>
+                </div>
+              </li>
+            </ul>
           </div>
         </section>
       </main>
