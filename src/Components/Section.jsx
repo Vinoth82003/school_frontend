@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Admin from "./Admin";
 import "../css/section.css";
 import { AppContext } from "../App";
+import AllStudents from "./AllStudents";
 
 const Section = () => {
   const value = useContext(AppContext);
@@ -59,7 +60,7 @@ const Section = () => {
           </div>
           {active}
           {active === "dashboard" && <Admin />}
-          {active === "all student" && <Admin />}
+          {active === "all student" && <AllStudents />}
         </header>
       </section>
     </>
