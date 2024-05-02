@@ -78,6 +78,10 @@
     overflow-y: auto;
     overflow-x: hidden;
   }
+
+  .input {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 425px) {
