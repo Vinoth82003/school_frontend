@@ -2,9 +2,12 @@ import React, { useEffect, useRef } from "react";
 import "../css/admin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faBookOpenReader,
+  faChalkboardTeacher,
   faCloudDownloadAlt,
   faRefresh,
   faUserGraduate,
+  faUserGroup,
 } from "@fortawesome/free-solid-svg-icons";
 import Chart from "chart.js/auto";
 
@@ -228,7 +231,7 @@ const Admin = () => {
           </li>
           <li className="counter teachers">
             <div className="counter_icon">
-              <FontAwesomeIcon icon={faUserGraduate} />
+              <FontAwesomeIcon icon={faChalkboardTeacher} />
             </div>
             <div className="counter_details">
               <p className="counter_name">Teachers</p>
@@ -237,16 +240,16 @@ const Admin = () => {
           </li>
           <li className="counter parents">
             <div className="counter_icon">
-              <FontAwesomeIcon icon={faUserGraduate} />
+              <FontAwesomeIcon icon={faUserGroup} />
             </div>
             <div className="counter_details">
               <p className="counter_name">Parents</p>
               <p className="counter_count">3000</p>
             </div>
           </li>
-          <li className="counter parents">
+          <li className="counter classes">
             <div className="counter_icon">
-              <FontAwesomeIcon icon={faUserGraduate} />
+              <FontAwesomeIcon icon={faBookOpenReader} />
             </div>
             <div className="counter_details">
               <p className="counter_name">Classes</p>
@@ -398,7 +401,7 @@ const Admin = () => {
               </li>
               <li className="notice">
                 <div className="notice_header">
-                  <h4 className="notice_title">Sports day</h4> 
+                  <h4 className="notice_title">Sports day</h4>
                   <h4 className="notice_dateTime">02/05/2024 11:00 AM</h4>
                 </div>
                 <div className="notice_body">
