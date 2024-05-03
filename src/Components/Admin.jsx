@@ -83,12 +83,12 @@ const Admin = () => {
 
   const TeacherChart = () => {
     const chartRef = useRef(null);
-    const chartId = "earnings-chart"; // Unique ID for the canvas
+    const chartId = "teacher-chart"; // Unique ID for the canvas
 
     useEffect(() => {
       const ctx = chartRef.current.getContext("2d");
       const myChart = new Chart(ctx, {
-        type: "pie",
+        type: "doughnut",
         data: {
           labels: ["Male", "Female"],
           datasets: [
@@ -104,6 +104,7 @@ const Admin = () => {
         options: {
           responsive: true,
           maintainAspectRatio: false,
+          cutout: "60%",
           scales: {
             x: {
               display: false,
@@ -126,12 +127,12 @@ const Admin = () => {
 
   const StudentChart = () => {
     const chartRef = useRef(null);
-    const chartId = "earnings-chart"; // Unique ID for the canvas
+    const chartId = "student-chart"; // Unique ID for the canvas
 
     useEffect(() => {
       const ctx = chartRef.current.getContext("2d");
       const myChart = new Chart(ctx, {
-        type: "pie",
+        type: "doughnut",
         data: {
           labels: ["Male", "Female"],
           datasets: [
@@ -147,6 +148,7 @@ const Admin = () => {
         options: {
           responsive: true,
           maintainAspectRatio: false,
+          cutout: "60%",
           scales: {
             x: {
               display: false,
