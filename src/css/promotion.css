@@ -46,3 +46,36 @@
   text-transform: uppercase;
   color: red;
 }
+
+.tag {
+  padding: 10px 15px;
+  border-radius: 20px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.tag.paid {
+  background: rgb(85, 159, 85);
+  color: #fff;
+}
+
+.tag.unpaid {
+  background: #f78f8f;
+  color: #fff;
+}
+
+.tag.due {
+  background: #f7d68f;
+  color: #4e4e4e;
+}
+
+.edit {
+  cursor: pointer;
+  color: #0000ff;
+  margin-left: 5px;
+}
+
+.sub,
+.std {
+  text-align: center;
+}

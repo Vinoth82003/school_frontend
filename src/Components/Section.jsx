@@ -7,6 +7,7 @@ import AddStudent from "./AddStudent";
 import Studentpromotion from "./Studentpromotion";
 import AllTeachers from "./AllTeachers";
 import AddTeacher from "./AddTeacher";
+import Payment from "./Payment";
 
 const Section = () => {
   const value = useContext(AppContext);
@@ -44,6 +45,7 @@ const Section = () => {
           {active === "Student Promotion" && <Studentpromotion />}
           {active === "all teachers" && <AllTeachers />}
           {active === "add teachers" && <AddTeacher />}
+          {active === "payment" && <Payment />}
         </header>
       </section>
     </>
