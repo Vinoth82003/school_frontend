@@ -14,9 +14,10 @@ const AllStudents = () => {
   const [currentStartPoint, setCurrentStartPoint] = useState(1);
   const [totalStudent, setTotalStudents] = useState(500);
   // table data
+  setTotalStudents(50);
   const TableData = () => {
     const studentDetails = [];
-    const section = ["A", "B", "C","D"];
+    const section = ["A", "B", "C", "D"];
 
     for (let i = currentStartPoint; i <= currentEndPoint; i++) {
       let data = {};
