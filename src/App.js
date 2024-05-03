@@ -5,14 +5,14 @@ import Section from "./Components/Section";
 export const AppContext = createContext();
 
 function App() {
-  const [isSidebar, setSidebar] = useState(false);
+  const [isSidebar, setSidebar] = useState(true);
   const [isAdmin, setAdmin] = useState(true);
   const [isStudent, setStudent] = useState(false);
   const [isTeacher, setTeacher] = useState(false);
   const [isParent, setParent] = useState(false);
-  const [currentClick, setCurrentClick] = useState(["payment"]);
-  const [activeBar, setactiveBar] = useState("teachers");
-  const [currentPath, setCurrentPath] = useState(["payment"]);
+  const [currentClick, setCurrentClick] = useState(["all parents"]);
+  const [activeBar, setactiveBar] = useState("parents");
+  const [currentPath, setCurrentPath] = useState(["all parents"]);
   const value = {
     isSidebar,
     setSidebar,
