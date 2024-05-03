@@ -10,6 +10,7 @@ import AddTeacher from "./AddTeacher";
 import Payment from "./Payment";
 import AllParents from "./AllParents";
 import AddParents from "./AddParents";
+import Feescollection from "./Feescollection";
 
 const Section = () => {
   const value = useContext(AppContext);
@@ -50,6 +51,7 @@ const Section = () => {
           {active === "payment" && <Payment />}
           {active === "all parents" && <AllParents />}
           {active === "add parents" && <AddParents />}
+          {active === "Fess Collections" && <Feescollection />}
         </header>
       </section>
     </>
