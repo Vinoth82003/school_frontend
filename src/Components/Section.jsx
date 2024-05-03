@@ -9,6 +9,7 @@ import AllTeachers from "./AllTeachers";
 import AddTeacher from "./AddTeacher";
 import Payment from "./Payment";
 import AllParents from "./AllParents";
+import AddParents from "./AddParents";
 
 const Section = () => {
   const value = useContext(AppContext);
@@ -48,6 +49,7 @@ const Section = () => {
           {active === "add teachers" && <AddTeacher />}
           {active === "payment" && <Payment />}
           {active === "all parents" && <AllParents />}
+          {active === "add parents" && <AddParents />}
         </header>
       </section>
     </>
