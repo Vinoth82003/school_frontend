@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBookJournalWhills,
-  faFemale,
-  faMale,
-  faUserEdit,
-} from "@fortawesome/free-solid-svg-icons";
-import { faBookOpen } from "@fortawesome/free-solid-svg-icons/faBookOpen";
+import { faUserEdit } from "@fortawesome/free-solid-svg-icons";
 import "../css/allStudent.css";
 import photo1 from "../img/student12.png";
 import photo2 from "../img/student11 (1).png";
@@ -140,8 +134,9 @@ const Payment = () => {
             <li className="search">
               <select name="status" id="status">
                 <option value="">search by status</option>
-                <option value="">paid</option>
-                <option value="">unpaid</option>
+                <option value="paid">Paid</option>
+                <option value="unpaid">Unpaid</option>
+                <option value="due">Due</option>
               </select>
             </li>
           </ul>
