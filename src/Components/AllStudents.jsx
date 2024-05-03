@@ -52,9 +52,6 @@ const AllStudents = () => {
       <section className="chart_containers">
         <div className="table_box">
           <ul className="table_options">
-            <li className="selected">
-              selected <span className="selected_count">0</span> rows
-            </li>
             <li className="search">
               <input
                 type="search"
@@ -84,16 +81,13 @@ const AllStudents = () => {
                 <option value="">section</option>
                 <option value="a">A</option>
                 <option value="b">B</option>
-                <option value="c">D</option>
+                <option value="c">C</option>
               </select>
             </li>
           </ul>
           <table class="table">
             <thead class="table_head">
               <tr class="tr">
-                <th class="th checkbox">
-                  <input type="checkbox" name="checkAll" id="checkAll" />
-                </th>
                 <th class="th">Roll</th>
                 <th class="th">photo</th>
                 <th class="th">name</th>
@@ -109,9 +103,6 @@ const AllStudents = () => {
             </thead>
             <tbody class="tbody">
               <tr class="tr">
-                <td class="td checkbox">
-                  <input type="checkbox" name="checkAll" id="checkAll" />
-                </td>
                 <td class="td">#1001</td>
                 <td class="td">photo</td>
                 <td class="td">John Doe</td>
@@ -127,9 +118,6 @@ const AllStudents = () => {
                 <td class="td">johndoe@gmail.com</td>
               </tr>
               <tr class="tr">
-                <td class="td checkbox">
-                  <input type="checkbox" name="checkAll" id="checkAll" />
-                </td>
                 <td class="td">#1002</td>
                 <td class="td">photo</td>
                 <td class="td">Jane Smith</td>
@@ -146,9 +134,6 @@ const AllStudents = () => {
                 <td class="td">janesmith@example.com</td>
               </tr>
               <tr class="tr">
-                <td class="td checkbox">
-                  <input type="checkbox" name="checkAll" id="checkAll" />
-                </td>
                 <td class="td">#1003</td>
                 <td class="td">photo</td>
                 <td class="td">Alice Johnson</td>
@@ -165,9 +150,6 @@ const AllStudents = () => {
                 <td class="td">alicejohnson@example.com</td>
               </tr>
               <tr class="tr">
-                <td class="td checkbox">
-                  <input type="checkbox" name="checkAll" id="checkAll" />
-                </td>
                 <td class="td">#1004</td>
                 <td class="td">photo</td>
                 <td class="td">David Lee</td>
