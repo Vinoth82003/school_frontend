@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBookJournalWhills,
@@ -7,8 +7,93 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faBookOpen } from "@fortawesome/free-solid-svg-icons/faBookOpen";
 import "../css/allStudent.css";
-
+import photo1 from "../img/student12.png";
+import photo2 from "../img/student11 (1).png";
 const AllStudents = () => {
+  const [currentEndPoint, setCurrentEndPoint] = useState(50);
+  const [currentStartPoint, setCurrentStartPoint] = useState(1);
+  const [totalStudent, setTotalStudents] = useState(500);
+  // table data
+  const TableData = () => {
+    const studentDetails = [];
+    const section = ["A", "B", "C"];
+
+    for (let i = currentStartPoint; i <= currentEndPoint; i++) {
+      let data = {};
+      const rollNo =
+        i < 100 ? `#00${i < 10 ? "0" + i : i}` : `#0${i < 10 ? "0" + i : i}`;
+      const photo = i % 2 === 0 ? photo1 : photo2;
+      const name = i < 10 ? `Student_00${i}` : `Student_0${i}`;
+      const gender = i % 2 === 0 ? "Male" : "Female";
+      const std = Math.floor(Math.random() * 12) + 1; // Random integer between 1 and 12
+      const sec = section[Math.floor(Math.random() * 3)]; //Random section
+      const parent = i < 10 ? `Parent_00${i}` : `Parent_0${i}`;
+      const address = `address_${i < 10 ? "0" + i : i}`;
+      const dob = `DD/MM/YYYY`;
+      const phone = `+91 9012345678`;
+      const email =
+        i < 10 ? `Student_00${i}@gmail.com` : `Student_0${i}@gmail.com`;
+
+      data = {
+        rollNo,
+        photo,
+        name,
+        gender,
+        std,
+        sec,
+        parent,
+        address,
+        dob,
+        phone,
+        email,
+      };
+      studentDetails.push(data);
+    }
+
+    return studentDetails.map((details) => {
+      return (
+        <tr class="tr">
+          <td class="td">{details.rollNo}</td>
+          <td class="td">
+            <img src={details.photo} alt="student" />
+          </td>
+          <td class="td">{details.name}</td>
+          <td class="td">{details.gender}</td>
+          <td class="td">{details.std}</td>
+          <td class="td">{details.sec}</td>
+          <td class="td">{details.parent}</td>
+          <td class="td">{details.address}</td>
+          <td class="td">{details.dob}</td>
+          <td class="td">{details.phone}</td>
+          <td class="td">{details.email}</td>
+        </tr>
+      );
+    });
+  };
+  const handleTabledata = (str, end) => {
+    setCurrentStartPoint(str);
+    setCurrentEndPoint(end);
+  };
+  const Pagination = ({ totalStudent, handleTabledata }) => {
+    const pageCount = Math.ceil(totalStudent / 50);
+
+    const handleClick = (pageNumber) => {
+      const start = (pageNumber - 1) * 50 + 1;
+      const end = pageNumber * 50;
+      handleTabledata(start, end);
+    };
+
+    return (
+      <ul className="pagination">
+        {[...Array(pageCount)].map((_, index) => (
+          <li key={index} onClick={() => handleClick(index + 1)}>
+            {index + 1}
+          </li>
+        ))}
+      </ul>
+    );
+  };
+  //all students
   return (
     <main className="admin_page">
       <ul className="counter_box allStuds_counts">
@@ -85,6 +170,10 @@ const AllStudents = () => {
               </select>
             </li>
           </ul>
+          <Pagination
+            totalStudent={totalStudent}
+            handleTabledata={handleTabledata}
+          />
           <table class="table">
             <thead class="table_head">
               <tr class="tr">
@@ -102,71 +191,13 @@ const AllStudents = () => {
               </tr>
             </thead>
             <tbody class="tbody">
-              <tr class="tr">
-                <td class="td">#1001</td>
-                <td class="td">photo</td>
-                <td class="td">John Doe</td>
-                <td class="td">Male</td>
-                <td class="td">1</td>
-                <td class="td">B</td>
-                <td class="td">John Milly</td>
-                <td class="td">
-                  #07/05, North Street, City Name, State, Country, 100 010
-                </td>
-                <td class="td">11/08/2003</td>
-                <td class="td">+91 9012345678</td>
-                <td class="td">johndoe@gmail.com</td>
-              </tr>
-              <tr class="tr">
-                <td class="td">#1002</td>
-                <td class="td">photo</td>
-                <td class="td">Jane Smith</td>
-                <td class="td">Female</td>
-                <td class="td">2</td>
-                <td class="td">A</td>
-                <td class="td">Michael Smith</td>
-                <td class="td">
-                  #15/08, South Avenue, Another City, Another State, Another
-                  Country, 200 020
-                </td>
-                <td class="td">05/12/2005</td>
-                <td class="td">+1 1234567890</td>
-                <td class="td">janesmith@example.com</td>
-              </tr>
-              <tr class="tr">
-                <td class="td">#1003</td>
-                <td class="td">photo</td>
-                <td class="td">Alice Johnson</td>
-                <td class="td">Female</td>
-                <td class="td">3</td>
-                <td class="td">C</td>
-                <td class="td">Robert Johnson</td>
-                <td class="td">
-                  #20/12, East Street, Some Town, Another State, Another
-                  Country, 300 030
-                </td>
-                <td class="td">09/03/2004</td>
-                <td class="td">+44 9876543210</td>
-                <td class="td">alicejohnson@example.com</td>
-              </tr>
-              <tr class="tr">
-                <td class="td">#1004</td>
-                <td class="td">photo</td>
-                <td class="td">David Lee</td>
-                <td class="td">Male</td>
-                <td class="td">4</td>
-                <td class="td">D</td>
-                <td class="td">Jennifer Lee</td>
-                <td class="td">
-                  #25/05, West Street, Some City, Another State, Another
-                  Country, 400 040
-                </td>
-                <td class="td">18/06/2002</td>
-                <td class="td">+61 123498765</td>
-                <td class="td">davidlee@example.com</td>
-              </tr>
+              <TableData />
             </tbody>
           </table>
+          <Pagination
+            totalStudent={totalStudent}
+            handleTabledata={handleTabledata}
+          />
         </div>
       </section>
     </main>

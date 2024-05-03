@@ -96,3 +96,34 @@ input[type="checkbox"] {
   width: 200px;
   text-align: center;
 }
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  gap: 10px;
+}
+
+.pagination li {
+  list-style: none;
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f2f2f2;
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: all 0.2s;
+}
+
+.pagination li:hover,
+.pagination li.active {
+  background: blue;
+  color: #fff;
+  box-shadow: 0px 0px 10px blue;
+}
