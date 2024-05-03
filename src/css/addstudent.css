@@ -1,0 +1,164 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 15px;
+}
+
+@media (min-width: 768px) {
+  .col {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .col {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
+/* Styles for form input fields */
+.input-field {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #e8e8e8;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+  background: #e8e8e8;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="file"] {
+  padding: 5px;
+  border: none;
+}
+
+/* Styles for submit button */
+.submit-btn {
+  padding: 10px 20px;
+  background-color: #0c8b4b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-btn {
+  background-color: #ff0037;
+}
+
+.submit-btn:hover {
+  background-color: #056937;
+}
+.reset-btn:hover {
+  background-color: #a30326;
+}
+
+/* Hover state for input fields */
+.input-field input[type="text"]:hover,
+.input-field input[type="date"]:hover,
+.input-field input[type="email"]:hover,
+.input-field select:hover,
+.input-field textarea:hover {
+  border-color: #999;
+}
+
+/* Focus state for input fields */
+.input-field input[type="text"]:focus,
+.input-field input[type="date"]:focus,
+.input-field input[type="email"]:focus,
+.input-field select:focus,
+.input-field textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Active state for submit button */
+.submit-btn:active {
+  background-color: #0056b3;
+}
+
+.input-field input[type="file"] {
+  visibility: hidden;
+}
+
+.select_profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0px 0px 10px #477cb4;
+}
+
+.select_profile img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+}
+
+.click_select {
+  position: absolute;
+  right: 0px;
+  bottom: 7px;
+  width: 27px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #052eb6;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  box-shadow: 0px 0px 10px;
+  cursor: pointer;
+}
+
+.col.buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
