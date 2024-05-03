@@ -2,3 +2,47 @@
   border-radius: 5px;
   box-shadow: 2px 2px 5px #ddd;
 }
+
+.fetch {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  background-color: orange;
+  color: #fff;
+  cursor: pointer;
+}
+
+.fetch:hover {
+  transition: all 0.2s;
+  background-color: rgb(193, 126, 0);
+}
+
+.container div.options {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.table select {
+  width: 150px;
+}
+
+.table th {
+  padding: 10px;
+  background: #333;
+  color: #fff;
+}
+
+.promotetable {
+  margin-top: 20px;
+}
+
+.promotetable td {
+  padding: 10px;
+  text-align: center;
+}
+
+.p {
+  text-transform: uppercase;
+  color: red;
+}
