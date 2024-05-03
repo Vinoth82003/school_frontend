@@ -3,6 +3,7 @@ import Admin from "./Admin";
 import "../css/section.css";
 import { AppContext } from "../App";
 import AllStudents from "./AllStudents";
+import AddStudent from "./AddStudent";
 
 const Section = () => {
   const value = useContext(AppContext);
@@ -14,16 +15,6 @@ const Section = () => {
       : value.currentClick[0];
   console.log(active);
 
-  const handlePath = (path) => {
-    value.setactiveBar(path.toString().toLowerCase());
-    value.setCurrentPath([path]);
-    if (path === "dashboard" || path === "message" || path === "notice") {
-      value.setCurrentClick([path]);
-    }
-  };
-  const handleLastPath = (path) => {
-    value.setCurrentClick([path]);
-  };
   return (
     <>
       <section
@@ -35,24 +26,10 @@ const Section = () => {
         <header className="head">
           <h1 className="dashborad_name">Admin dashboard</h1>
           <div className="path">
-            <p className="pathClick" onClick={() => handlePath(["dashboard"])}>
-              Home
-            </p>
+            <p className="pathClick">Home</p>
             {paths.map((path, index) => {
               return (
-                <p
-                  key={index}
-                  className="pathClick"
-                  onClick={
-                    index !== 1
-                      ? () => {
-                          handlePath(path);
-                        }
-                      : () => {
-                          handleLastPath(path);
-                        }
-                  }
-                >
+                <p key={index} className="pathClick">
                   / {path}
                 </p>
               );
@@ -60,6 +37,7 @@ const Section = () => {
           </div>
           {active === "dashboard" && <Admin />}
           {active === "all student" && <AllStudents />}
+          {active === "add student" && <AddStudent />}
         </header>
       </section>
     </>
