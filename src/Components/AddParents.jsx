@@ -31,7 +31,7 @@ const AddParents = () => {
         <section className="chart_containers">
           <form action="#" method="post" className="table_box">
             <h1>
-              <FontAwesomeIcon icon={faArrowAltCircleRight} /> Add Parents
+              <FontAwesomeIcon icon={faArrowAltCircleRight} /> Add Parent
             </h1>
             <div className="container">
               <div className="row">
@@ -72,26 +72,6 @@ const AddParents = () => {
                       <option value="others">Others</option>
                     </select>
                   </div>
-                  <div className="input-field">
-                    <label htmlFor="rollno">Occupation </label>
-                    <input
-                      type="text"
-                      name="rollno"
-                      id="rollno"
-                      className="form_input"
-                      placeholder="Engineer"
-                    />
-                  </div>
-                  <div className="input-field text-area">
-                    <label htmlFor="address">Address *</label>
-                    <textarea
-                      name="address"
-                      id="address"
-                      cols="30"
-                      rows="10"
-                      required
-                    ></textarea>
-                  </div>
                 </div>
                 <div className="col">
                   <div className="input-field">
@@ -126,6 +106,8 @@ const AddParents = () => {
                       required
                     />
                   </div>
+                </div>
+                <div className="col">
                   <div className="input-field">
                     <label htmlFor="email">Email </label>
                     <input
@@ -134,6 +116,19 @@ const AddParents = () => {
                       id="email"
                       className="form_input"
                       placeholder="johndoe12@gmail.com"
+                    />
+                  </div>
+                  <div className="input-field">
+                    <label htmlFor="class">
+                      Kids * (names seperated by ",")
+                    </label>
+                    <input
+                      type="text"
+                      name="class"
+                      id="class"
+                      className="form_input"
+                      placeholder="John,Doe"
+                      required
                     />
                   </div>
                   <div className="input-field">
@@ -148,8 +143,18 @@ const AddParents = () => {
                   </div>
                 </div>
                 <div className="col">
+                  <div className="input-field text-area">
+                    <label htmlFor="address">Address *</label>
+                    <textarea
+                      name="address"
+                      id="address"
+                      cols="30"
+                      rows="10"
+                      required
+                    ></textarea>
+                  </div>
                   <div className="input-field profile_select">
-                    <label htmlFor="photo">Parent Photo </label>
+                    <label htmlFor="photo">Teacher Photo </label>
                     <div className="select_profile">
                       <img
                         src={selectedPhoto || defaultLogo}
@@ -172,7 +177,6 @@ const AddParents = () => {
                     />
                   </div>
                 </div>
-                <div className="col"></div>
               </div>
               <div className="row">
                 <div className="col buttons">
