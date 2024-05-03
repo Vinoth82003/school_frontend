@@ -40,6 +40,7 @@ const Section = () => {
           {active === "all student" && <AllStudents />}
           {active === "add student" && <AddStudent />}
           {active === "Student Promotion" && <Studentpromotion />}
+          {active === "all teachers" && <Studentpromotion />}
         </header>
       </section>
     </>

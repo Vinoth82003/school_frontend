@@ -17,7 +17,7 @@ const Studentpromotion = () => {
               <div className="options">
                 <select name="current_session" id="current_session">
                   <option value="">class</option>
-                  <option className="option" value="1" selected>
+                  <option className="option" value="1">
                     1
                   </option>
                   <option value="2">2</option>
@@ -34,9 +34,7 @@ const Studentpromotion = () => {
                 </select>
                 <select name="promotion_session" id="promotion_session">
                   <option value="">section</option>
-                  <option value="a" selected>
-                    A
-                  </option>
+                  <option value="a">A</option>
                   <option value="b">B</option>
                   <option value="c">C</option>
                   <option value="d">D</option>
@@ -69,9 +67,7 @@ const Studentpromotion = () => {
                     <td>A</td>
                     <td>
                       <select name="status" id="status">
-                        <option value="promote" selected>
-                          Promote
-                        </option>
+                        <option value="promote">Promote</option>
                         <option value="depromote">Depromote</option>
                       </select>
                     </td>
@@ -86,9 +82,7 @@ const Studentpromotion = () => {
                     <td>A</td>
                     <td>
                       <select name="status" id="status">
-                        <option value="promote" selected>
-                          Promote
-                        </option>
+                        <option value="promote">Promote</option>
                         <option value="depromote">Depromote</option>
                       </select>
                     </td>
@@ -103,7 +97,7 @@ const Studentpromotion = () => {
                     <td>A</td>
                     <td>
                       <select name="status" id="status">
-                        <option value="promote" selected>
+                        <option value="promote">
                           Promote
                         </option>
                         <option value="depromote">Depromote</option>

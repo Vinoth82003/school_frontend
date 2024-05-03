@@ -14,7 +14,7 @@ const AllStudents = () => {
   const [currentStartPoint, setCurrentStartPoint] = useState(1);
   const [totalStudent, setTotalStudents] = useState(500);
   // table data
-  setTotalStudents(50);
+  // setTotalStudents(50);
   const TableData = () => {
     const studentDetails = [];
     const section = ["A", "B", "C", "D"];
@@ -51,22 +51,22 @@ const AllStudents = () => {
       studentDetails.push(data);
     }
 
-    return studentDetails.map((details) => {
+    return studentDetails.map((details, index) => {
       return (
-        <tr class="tr">
-          <td class="td">{details.rollNo}</td>
-          <td class="td">
+        <tr className="tr" key={index}>
+          <td className="td">{details.rollNo}</td>
+          <td className="td">
             <img src={details.photo} alt="student" />
           </td>
-          <td class="td">{details.name}</td>
-          <td class="td">{details.gender}</td>
-          <td class="td">{details.std}</td>
-          <td class="td">{details.sec}</td>
-          <td class="td">{details.parent}</td>
-          <td class="td">{details.address}</td>
-          <td class="td">{details.dob}</td>
-          <td class="td">{details.phone}</td>
-          <td class="td">{details.email}</td>
+          <td className="td">{details.name}</td>
+          <td className="td">{details.gender}</td>
+          <td className="td">{details.std}</td>
+          <td className="td">{details.sec}</td>
+          <td className="td">{details.parent}</td>
+          <td className="td">{details.address}</td>
+          <td className="td">{details.dob}</td>
+          <td className="td">{details.phone}</td>
+          <td className="td">{details.email}</td>
         </tr>
       );
     });
@@ -175,23 +175,23 @@ const AllStudents = () => {
             totalStudent={totalStudent}
             handleTabledata={handleTabledata}
           />
-          <table class="table">
-            <thead class="table_head">
-              <tr class="tr">
-                <th class="th">Roll</th>
-                <th class="th">photo</th>
-                <th class="th">name</th>
-                <th class="th">gender</th>
-                <th class="th">class</th>
-                <th class="th">section</th>
-                <th class="th">parents</th>
-                <th class="th">Address</th>
-                <th class="th">d-o-b</th>
-                <th class="th">phone</th>
-                <th class="th">e-mail</th>
+          <table className="table">
+            <thead className="table_head">
+              <tr className="tr">
+                <th className="th">Roll</th>
+                <th className="th">photo</th>
+                <th className="th">name</th>
+                <th className="th">gender</th>
+                <th className="th">class</th>
+                <th className="th">section</th>
+                <th className="th">parents</th>
+                <th className="th">Address</th>
+                <th className="th">d-o-b</th>
+                <th className="th">phone</th>
+                <th className="th">e-mail</th>
               </tr>
             </thead>
-            <tbody class="tbody">
+            <tbody className="tbody">
               <TableData />
             </tbody>
           </table>
