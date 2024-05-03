@@ -16,7 +16,7 @@ const AllStudents = () => {
   // table data
   const TableData = () => {
     const studentDetails = [];
-    const section = ["A", "B", "C"];
+    const section = ["A", "B", "C","D"];
 
     for (let i = currentStartPoint; i <= currentEndPoint; i++) {
       let data = {};
@@ -26,7 +26,7 @@ const AllStudents = () => {
       const name = i < 10 ? `Student_00${i}` : `Student_0${i}`;
       const gender = i % 2 === 0 ? "Male" : "Female";
       const std = Math.floor(Math.random() * 12) + 1; // Random integer between 1 and 12
-      const sec = section[Math.floor(Math.random() * 3)]; //Random section
+      const sec = section[Math.floor(Math.random() * 4)]; //Random section
       const parent = i < 10 ? `Parent_00${i}` : `Parent_0${i}`;
       const address = `address_${i < 10 ? "0" + i : i}`;
       const dob = `DD/MM/YYYY`;
