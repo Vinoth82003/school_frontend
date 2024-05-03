@@ -56,7 +56,9 @@ const AllStudents = () => {
         <tr className="tr" key={index}>
           <td className="td">{details.rollNo}</td>
           <td className="td">
-            <img src={details.photo} alt="student" />
+            <div className="stud_image">
+              <img src={details.photo} alt="student" />
+            </div>
           </td>
           <td className="td">{details.name}</td>
           <td className="td">{details.gender}</td>
