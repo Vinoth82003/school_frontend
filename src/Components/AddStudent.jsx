@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCameraAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowAltCircleRight,
+  faCameraAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import defaultLogo from "../img/default.jpeg";
 import "../css/addstudent.css";
 
@@ -27,6 +30,9 @@ const AddStudent = () => {
       <main className="admin_page">
         <section className="chart_containers">
           <form action="#" method="post" className="table_box">
+            <h1>
+              <FontAwesomeIcon icon={faArrowAltCircleRight} /> Add Student
+            </h1>
             <div className="container">
               <div className="row">
                 <div className="col">

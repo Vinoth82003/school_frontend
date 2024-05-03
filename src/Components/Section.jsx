@@ -4,6 +4,7 @@ import "../css/section.css";
 import { AppContext } from "../App";
 import AllStudents from "./AllStudents";
 import AddStudent from "./AddStudent";
+import Studentpromotion from "./Studentpromotion";
 
 const Section = () => {
   const value = useContext(AppContext);
@@ -38,6 +39,7 @@ const Section = () => {
           {active === "dashboard" && <Admin />}
           {active === "all student" && <AllStudents />}
           {active === "add student" && <AddStudent />}
+          {active === "Student Promotion" && <Studentpromotion />}
         </header>
       </section>
     </>
