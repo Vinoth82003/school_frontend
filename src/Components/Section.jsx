@@ -6,6 +6,7 @@ import AllStudents from "./AllStudents";
 import AddStudent from "./AddStudent";
 import Studentpromotion from "./Studentpromotion";
 import AllTeachers from "./AllTeachers";
+import AddTeacher from "./AddTeacher";
 
 const Section = () => {
   const value = useContext(AppContext);
@@ -42,6 +43,7 @@ const Section = () => {
           {active === "add student" && <AddStudent />}
           {active === "Student Promotion" && <Studentpromotion />}
           {active === "all teachers" && <AllTeachers />}
+          {active === "add teachers" && <AddTeacher />}
         </header>
       </section>
     </>
