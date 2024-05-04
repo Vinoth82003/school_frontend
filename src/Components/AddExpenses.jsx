@@ -1,30 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowAltCircleRight,
-  faCameraAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import defaultLogo from "../img/default.jpeg";
 import "../css/addstudent.css";
 
 const AddExpenses = () => {
-  const [selectedPhoto, setSelectedPhoto] = useState(null);
-
-  const handlePhotoChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        setSelectedPhoto(reader.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handleSelectPhotoClick = () => {
-    document.getElementById("photoInput").click();
-  };
-
   return (
     <>
       <main className="admin_page">
