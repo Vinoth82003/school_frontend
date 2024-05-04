@@ -3,7 +3,7 @@ import Navbar from "./Components/Navbar";
 import SideBar from "./Components/SideBar";
 import Section from "./Components/Section";
 export const AppContext = createContext();
-
+// main app function which is used to render all other components
 function App() {
   const [isSidebar, setSidebar] = useState(true);
   const [isAdmin, setAdmin] = useState(true);
