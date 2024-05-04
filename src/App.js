@@ -10,9 +10,9 @@ function App() {
   const [isStudent, setStudent] = useState(false);
   const [isTeacher, setTeacher] = useState(false);
   const [isParent, setParent] = useState(false);
-  const [currentClick, setCurrentClick] = useState(["all parents"]);
-  const [activeBar, setactiveBar] = useState("parents");
-  const [currentPath, setCurrentPath] = useState(["all parents"]);
+  const [currentClick, setCurrentClick] = useState(["Add Expenses"]);
+  const [activeBar, setactiveBar] = useState("acconunt");
+  const [currentPath, setCurrentPath] = useState(["Add Expenses"]);
   const value = {
     isSidebar,
     setSidebar,

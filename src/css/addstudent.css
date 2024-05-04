@@ -45,6 +45,7 @@
 label {
   display: block;
   margin-bottom: 5px;
+  color: #717171;
 }
 
 input[type="text"],
