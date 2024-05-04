@@ -1,7 +1,14 @@
 import React from "react";
+import "../css/addstudent.css";
 
 const Message = () => {
-  return <div>Message</div>;
+  return (
+    <>
+      <main className="admin_page">
+        <section className="chart_containers"></section>
+      </main>
+    </>
+  );
 };
 
 export default Message;
