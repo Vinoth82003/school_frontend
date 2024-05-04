@@ -88,6 +88,21 @@ const Message = () => {
                   </div>
                 </div>
               </div>
+              <ul className="convo_box">
+                <li className="message_li recieve">
+                  <div className="inner_message_li">
+                    <p className="msg">hi hello</p>
+                    <p className="time">11:11 AM</p>
+                  </div>
+                </li>
+                <li className="message_li sent">
+                  <div className="inner_message_li">
+                    <p className="msg">hi hello</p>
+                    <p className="time">12:11 PM</p>
+                  </div>
+                </li>
+                <li className="message_li info">info</li>
+              </ul>
             </div>
           </div>
         </section>

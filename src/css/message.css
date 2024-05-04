@@ -164,3 +164,50 @@ ul {
   font-size: 14px;
   display: none;
 }
+
+.convo_box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.convo_box .recieve {
+  align-self: flex-start;
+  background: rgb(223, 247, 255);
+}
+
+.convo_box .sent {
+  align-self: flex-end;
+  background: #ffd4d4;
+}
+
+.convo_box .recieve,
+.convo_box .sent {
+  padding: 10px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.inner_message_li .time {
+  position: absolute;
+  margin-top: 10px;
+}
+
+.convo_box .recieve .inner_message_li .time {
+  right: 0;
+}
+
+.convo_box .sent .inner_message_li .time {
+  left: 0;
+}
+
+.info {
+  padding: 5px;
+  border-radius: 5px;
+  background: #c3ffc3;
+  min-width: 50px;
+  text-align: center;
+}
