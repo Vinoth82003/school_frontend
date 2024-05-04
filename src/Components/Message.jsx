@@ -52,9 +52,14 @@ const Message = () => {
                 <li className="tag teacher">Teachers</li>
                 <li className="tag student">Students</li>
               </ul>
-              <ul className="contact_list">
+              <ul className="contact_list_ul">
                 <ContactDetails />
               </ul>
+            </div>
+            <div className="message_conversation">
+                <div className="conversation_top">
+                    
+                </div>
             </div>
           </div>
         </section>

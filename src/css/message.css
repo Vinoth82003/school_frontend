@@ -1,11 +1,99 @@
+ul {
+  list-style: none;
+}
+
 .inner_list {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   flex-wrap: nowrap;
   justify-content: space-between;
+  padding: 5px;
 }
 
-.contact_list {
-  width: 200px;
+.inner_list:hover {
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.contact_list_ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #f4f4f4;
+  margin-top: 10px;
+}
+
+.message_left {
+  width: 220px;
+  background: #f4f4f4;
+}
+
+.message_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 5px;
+}
+
+.teacher {
+  background: rgb(214, 170, 255);
+}
+
+.tag.student {
+  background: rgb(252, 196, 182);
+}
+
+.roll {
+  font-size: 14px;
+  font-weight: 600;
+  color: #616161;
+}
+
+.StudName {
+  font-size: 12px;
+  font-weight: 600;
+  color: #616161;
+}
+
+.user_profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 50%;
+  width: 39px;
+  min-width: 39px;
+  max-width: 39px;
+  height: 39px;
+  min-height: 39px;
+  max-height: 39px;
+}
+
+.user_profile img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.list:first-child .user_profile {
+  background: lightgreen;
+}
+.list:nth-child(odd) .user_profile {
+  background: lightcoral;
+}
+
+.list:nth-child(even) .user_profile {
+  background: lightseagreen;
+}
+
+.message_box {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  padding: 5px;
+  box-shadow: 0px 0px 5px #d1d1d1;
 }
