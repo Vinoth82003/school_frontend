@@ -1,11 +1,4 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBookJournalWhills,
-  faFemale,
-  faMale,
-} from "@fortawesome/free-solid-svg-icons";
-import { faBookOpen } from "@fortawesome/free-solid-svg-icons/faBookOpen";
 import "../css/allStudent.css";
 import photo1 from "../img/student12.png";
 import photo2 from "../img/student11 (1).png";
