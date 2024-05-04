@@ -255,7 +255,7 @@ const SideBar = () => {
               </li>
             </ul>
           </li>
-          <li
+          {/* <li
             className={`side_menu ${
               value.activeBar === "exam" ? "active" : ""
             }`}
@@ -280,17 +280,17 @@ const SideBar = () => {
               </li>
               <li
                 className="sub_menu_li"
-                onClick={() => handleMenuClick(["exam", "Exam Scheduke"])}
+                onClick={() => handleMenuClick(["exam", "Exam Schedule"])}
               >
                 <div className="inner_submenu">
                   <div className="submenu_icon">
                     <FontAwesomeIcon icon={faClockRotateLeft} />
                   </div>
-                  <p className="submenu_text">Exam Scheduke</p>
+                  <p className="submenu_text">Exam Schedule</p>
                 </div>
               </li>
             </ul>
-          </li>
+          </li> */}
           <li
             className={`side_menu ${
               value.activeBar === "notice" ? "active" : ""
