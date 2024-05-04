@@ -99,10 +99,9 @@
   gap: 10px;
   background: #fff;
   width: 100%;
-  height: 100%;
   padding: 10px;
   border-radius: 5px;
-  height: 400px;
+  min-height: 200px;
   max-height: 400px;
   max-width: 100%;
 }
