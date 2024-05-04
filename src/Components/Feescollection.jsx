@@ -1,11 +1,4 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBookJournalWhills,
-  faFemale,
-  faMale,
-} from "@fortawesome/free-solid-svg-icons";
-import { faBookOpen } from "@fortawesome/free-solid-svg-icons/faBookOpen";
 import "../css/allStudent.css";
 import photo1 from "../img/student12.png";
 import photo2 from "../img/student11 (1).png";
@@ -120,23 +113,6 @@ const Feescollection = () => {
                 id="searchByID"
                 placeholder="search By ID .."
               />
-            </li>
-            <li className="search">
-              <input
-                type="search"
-                name="searchByStd"
-                id="searchByStd"
-                placeholder="search By Std .."
-              />
-            </li>
-            <li className="search">
-              <select name="bySec" id="bySec">
-                <option value="">section</option>
-                <option value="a">A</option>
-                <option value="b">B</option>
-                <option value="c">C</option>
-                <option value="d">D</option>
-              </select>
             </li>
           </ul>
           <Pagination
