@@ -4,6 +4,12 @@ import photo2 from "../img/student11.png";
 import photo3 from "../img/student12.png";
 import photo4 from "../img/student13.png";
 import "../css/message.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faExclamationTriangle,
+  faUserCircle,
+  faUserSlash,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Message = () => {
   const ContactDetails = () => {
@@ -57,9 +63,31 @@ const Message = () => {
               </ul>
             </div>
             <div className="message_conversation">
-                <div className="conversation_top">
-                    
+              <div className="conversation_top">
+                <div className="conv_prof">
+                  <div className="user_profile">
+                    <img src={photo1} alt="prof" />
+                  </div>
+                  <div className="user_name">
+                    <div className="roll">#1212</div>
+                    <div className="StudName">Jancy Jone</div>
+                  </div>
                 </div>
+                <div className="options">
+                  <div className="msgOptList block">
+                    <FontAwesomeIcon icon={faUserSlash} />
+                    <p className="text_hover">Block</p>
+                  </div>
+                  <div className="msgOptList report">
+                    <FontAwesomeIcon icon={faExclamationTriangle} />
+                    <p className="text_hover">Report</p>
+                  </div>
+                  <div className="msgOptList view">
+                    <FontAwesomeIcon icon={faUserCircle} />
+                    <p className="text_hover">View</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

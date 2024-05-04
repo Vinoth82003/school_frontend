@@ -27,6 +27,8 @@ ul {
 
 .message_left {
   width: 220px;
+  min-width: 220px;
+  max-width: 220px;
   background: #f4f4f4;
 }
 
@@ -64,7 +66,7 @@ ul {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: #ffffff;
+  background: lightcoral;
   border-radius: 50%;
   width: 39px;
   min-width: 39px;
@@ -96,4 +98,69 @@ ul {
   flex-direction: row;
   padding: 5px;
   box-shadow: 0px 0px 5px #d1d1d1;
+}
+
+.conversation_top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  padding: 5px 10px;
+  background: #f0f0f0;
+  box-shadow: 0px 3px 3px #d1d1d1;
+}
+
+.message_conversation {
+  width: 100%;
+}
+
+.conv_prof {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.conv_prof .roll,
+.conv_prof .StudName {
+  font-size: 14px;
+  color: #333;
+}
+
+.conversation_top .msgOptList {
+  font-size: 16px;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conversation_top .msgOptList:hover .text_hover {
+  display: flex;
+  animation: move_up 0.3s ease-in forwards;
+}
+
+@keyframes move_up {
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.text_hover {
+  position: absolute;
+  top: 50px;
+  padding: 10px;
+  background: #333;
+  color: #fff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  transform: translateY(30px);
+  opacity: 0;
+  font-size: 14px;
+  display: none;
 }
