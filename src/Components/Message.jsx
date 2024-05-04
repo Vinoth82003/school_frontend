@@ -48,6 +48,39 @@ const Message = () => {
     ));
   };
 
+  const messages = () => {
+    let message_box = [];
+    let times = ["11:00 AM", "10:00 AM", "01:00 PM", "12:00 AM", "12:00 PM"];
+    let types = ["sent", "recieve"];
+    let messages = [
+      "this is first message ",
+      "this is second message this is first message ",
+      "this is second message this is first message ",
+      "this is second message this is first message this is second message this is first message this is second message this is first message this is second message this is first message ",
+    ];
+    for (let i = 0; i <= 10; i++) {
+      let time = times[Math.floor(Math.random() * times.length)];
+      let type = types[Math.floor(Math.random() * types.length)];
+      let message = messages[Math.floor(Math.random() * messages.length)];
+      let data = {
+        time,
+        type,
+        message,
+      };
+
+      message_box.push(data);
+    }
+
+    return message_box.map((message, index) => (
+      <li key={index} className={`message_li ${message.type}`}>
+        <div className="inner_message_li">
+          <p className="msg">{message.message}</p>
+          <p className="time">{message.time}</p>
+        </div>
+      </li>
+    ));
+  };
+
   return (
     <>
       <main className="admin_page">
@@ -89,19 +122,13 @@ const Message = () => {
                 </div>
               </div>
               <ul className="convo_box">
-                <li className="message_li recieve">
-                  <div className="inner_message_li">
-                    <p className="msg">hi hello</p>
-                    <p className="time">11:11 AM</p>
-                  </div>
-                </li>
-                <li className="message_li sent">
-                  <div className="inner_message_li">
-                    <p className="msg">hi hello</p>
-                    <p className="time">12:11 PM</p>
-                  </div>
-                </li>
                 <li className="message_li info">info</li>
+                {/* {messages()} */}
+              </ul>
+              <ul className="message_send_input">
+                <li className="input_box">
+                  <input type="text" name="send message" id="send message" />
+                </li>
               </ul>
             </div>
           </div>
