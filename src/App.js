@@ -2,6 +2,7 @@ import { createContext, useState } from "react";
 import Navbar from "./Components/Navbar";
 import SideBar from "./Components/SideBar";
 import Section from "./Components/Section";
+// creating context which will store the command datas which are stored and accesing in all other components
 export const AppContext = createContext();
 // main app function which is used to render all other components
 function App() {
