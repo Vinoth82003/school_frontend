@@ -123,7 +123,7 @@ const Message = () => {
               </div>
               <ul className="convo_box">
                 <li className="message_li info">info</li>
-                {/* {messages()} */}
+                {messages()}
               </ul>
               <ul className="message_send_input">
                 <li className="input_box">
