@@ -1,11 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { AppContext } from "../App";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalculator,
   faChalkboardTeacher,
-  faClipboardList,
-  faClockRotateLeft,
   faDashboard,
   faGraduationCap,
   faListDots,
@@ -16,13 +14,11 @@ import {
   faUserGraduate,
   faUserGroup,
   faUserPlus,
-  faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import "../css/sidebar.css";
 import { faUserCheck } from "@fortawesome/free-solid-svg-icons/faUserCheck";
 import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons/faPeopleGroup";
 import { faMoneyBills } from "@fortawesome/free-solid-svg-icons/faMoneyBills";
-import { faList12 } from "@fortawesome/free-solid-svg-icons/faList12";
 
 const SideBar = () => {
   const value = useContext(AppContext);
