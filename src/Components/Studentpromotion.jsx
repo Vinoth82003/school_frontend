@@ -43,6 +43,20 @@ const Studentpromotion = () => {
                   Fetch
                 </button>
               </div>
+              <div className="options select_bar">
+                <div className="selected_count">
+                  selected <span className="count_box">10</span>
+                </div>
+                <button type="button" className="btn promote">
+                  Promote
+                </button>
+                <button type="button" className="btn depromote">
+                  Depromote
+                </button>
+                <button type="button" className="btn fail">
+                  Fail
+                </button>
+              </div>
               <table className="table promotetable">
                 <thead>
                   <tr>
@@ -97,9 +111,7 @@ const Studentpromotion = () => {
                     <td>A</td>
                     <td>
                       <select name="status" id="status">
-                        <option value="promote">
-                          Promote
-                        </option>
+                        <option value="promote">Promote</option>
                         <option value="depromote">Depromote</option>
                       </select>
                     </td>
