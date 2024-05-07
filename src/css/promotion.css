@@ -79,3 +79,53 @@
 .std {
   text-align: center;
 }
+
+.save {
+  align-self: right;
+  padding: 10px 15px;
+  border-radius: 20px;
+  background: rgb(100, 174, 100);
+  border: none;
+  color: #ffffff;
+}
+
+.save:hover {
+  background: rgb(40, 113, 40);
+  cursor: pointer;
+}
+
+.select_bar {
+  margin-top: 10px;
+}
+
+.count_box {
+  padding: 5px;
+  border-radius: 5px;
+  background: orange;
+  color: #fff;
+}
+
+.promote {
+  --bg-clr: rgb(175, 228, 175);
+}
+
+.depromote {
+  --bg-clr: rgb(251, 166, 166);
+}
+.fail {
+  --bg-clr: rgb(251, 221, 166);
+}
+
+.btn {
+  padding: 10px 17px;
+  border-radius: 5px;
+  border: none;
+  text-transform: capitalize;
+  background: var(--bg-clr);
+  color: #3a3a3a;
+  cursor: pointer;
+}
+
+.btn:hover {
+  scale: 1.05;
+}
