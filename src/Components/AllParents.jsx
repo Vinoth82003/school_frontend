@@ -28,9 +28,9 @@ const AllParents = () => {
       let data = {};
       const rollNo =
         i < 100 ? `#00${i < 10 ? "0" + i : i}` : `#0${i < 10 ? "0" + i : i}`;
-      const photo = i % 2 == 0 ? photo1 : photo2;
+      const photo = i % 2 === 0 ? photo1 : photo2;
       const name = i < 10 ? `Parent_00${i}` : `Parent_0${i}`;
-      const gender = i % 2 == 0 ? "Male" : "Female";
+      const gender = i % 2 === 0 ? "Male" : "Female";
       const subject =
         occupations[Math.floor(Math.random() * occupations.length)]; //Random section
       const address = `address_${i < 10 ? "0" + i : i}`;

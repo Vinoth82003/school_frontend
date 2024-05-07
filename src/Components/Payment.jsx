@@ -33,7 +33,7 @@ const Payment = () => {
       let data = {};
       const rollNo =
         i < 100 ? `#00${i < 10 ? "0" + i : i}` : `#0${i < 10 ? "0" + i : i}`;
-      const photo = i % 2 == 0 ? photo1 : photo2;
+      const photo = i % 2 === 0 ? photo1 : photo2;
       const status = Allstatus[Math.floor(Math.random() * Allstatus.length)];
       const name = i < 10 ? `Teacher_00${i}` : `Teacher_0${i}`;
       const std = Math.floor(Math.random() * 12) + 1; // Random integer between 1 and 12

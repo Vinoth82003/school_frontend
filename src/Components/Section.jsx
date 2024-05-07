@@ -21,7 +21,7 @@ const Section = () => {
   let paths = value.currentPath;
 
   const active =
-    value.currentClick[0].length == 2
+    value.currentClick[0].length === 2
       ? value.currentClick[0][1]
       : value.currentClick[0];
   console.log(active);
@@ -46,20 +46,20 @@ const Section = () => {
               );
             })}
           </div>
-          {active == "dashboard" && <Admin />}
-          {active == "all student" && <AllStudents />}
-          {active == "add student" && <AddStudent />}
-          {active == "Student Promotion" && <Studentpromotion />}
-          {active == "all teachers" && <AllTeachers />}
-          {active == "add teachers" && <AddTeacher />}
-          {active == "payment" && <Payment />}
-          {active == "all parents" && <AllParents />}
-          {active == "add parents" && <AddParents />}
-          {active == "Fess Collections" && <Feescollection />}
-          {active == "Expenses" && <Expense />}
-          {active == "Add Expenses" && <AddExpenses />}
-          {active == "notice" && <Notice />}
-          {active == "message" && <Message />}
+          {active === "dashboard" && <Admin />}
+          {active === "all student" && <AllStudents />}
+          {active === "add student" && <AddStudent />}
+          {active === "Student Promotion" && <Studentpromotion />}
+          {active === "all teachers" && <AllTeachers />}
+          {active === "add teachers" && <AddTeacher />}
+          {active === "payment" && <Payment />}
+          {active === "all parents" && <AllParents />}
+          {active === "add parents" && <AddParents />}
+          {active === "Fess Collections" && <Feescollection />}
+          {active === "Expenses" && <Expense />}
+          {active === "Add Expenses" && <AddExpenses />}
+          {active === "notice" && <Notice />}
+          {active === "message" && <Message />}
         </header>
       </section>
     </>

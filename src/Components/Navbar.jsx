@@ -28,7 +28,7 @@ const Navbar = () => {
   const [isActive, setActive] = useState(false);
 
   const toggleActiveMenu = (index) => {
-    setActiveMenu(activeMenu == index ? null : index);
+    setActiveMenu(activeMenu === index ? null : index);
   };
 
   return (
@@ -77,7 +77,7 @@ const Navbar = () => {
               </div>
               <div
                 className={`menu_option_box ${
-                  activeMenu == 0 ? "active" : ""
+                  activeMenu === 0 ? "active" : ""
                 }`}
               >
                 <div className="box_title">Stevne Zone</div>
@@ -123,7 +123,7 @@ const Navbar = () => {
               </div>
               <div
                 className={`menu_option_box ${
-                  activeMenu == 1 ? "active" : ""
+                  activeMenu === 1 ? "active" : ""
                 }`}
               >
                 <div className="box_title">03 Messages</div>
@@ -211,7 +211,7 @@ const Navbar = () => {
               </div>
               <div
                 className={`menu_option_box notification ${
-                  activeMenu == 2 ? "active" : ""
+                  activeMenu === 2 ? "active" : ""
                 }`}
               >
                 <div className="box_title">03 Notifications</div>
