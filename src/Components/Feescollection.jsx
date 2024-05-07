@@ -17,9 +17,9 @@ const Feescollection = () => {
       let data = {};
       const rollNo =
         i < 100 ? `#00${i < 10 ? "0" + i : i}` : `#0${i < 10 ? "0" + i : i}`;
-      const photo = i % 2 === 0 ? photo1 : photo2;
+      const photo = i % 2 == 0 ? photo1 : photo2;
       const name = i < 10 ? `Student_00${i}` : `Student_0${i}`;
-      const gender = i % 2 === 0 ? "Male" : "Female";
+      const gender = i % 2 == 0 ? "Male" : "Female";
       const std = Math.floor(Math.random() * 12) + 1; // Random integer between 1 and 12
       const sec = section[Math.floor(Math.random() * section.length)]; //Random section
       const status = statuses[Math.floor(Math.random() * statuses.length)]; //Random section

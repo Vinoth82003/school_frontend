@@ -45,7 +45,7 @@ const SideBar = () => {
         <ul className="sidebar">
           <li
             className={`side_menu ${
-              value.activeBar === "dashboard" ? "active" : ""
+              value.activeBar == "dashboard" ? "active" : ""
             }`}
           >
             <div
@@ -60,7 +60,7 @@ const SideBar = () => {
           </li>
           <li
             className={`side_menu ${
-              value.activeBar === "students" ? "active" : ""
+              value.activeBar == "students" ? "active" : ""
             }`}
           >
             <div
@@ -112,7 +112,7 @@ const SideBar = () => {
           </li>
           <li
             className={`side_menu ${
-              value.activeBar === "teachers" ? "active" : ""
+              value.activeBar == "teachers" ? "active" : ""
             }`}
           >
             <div
@@ -162,7 +162,7 @@ const SideBar = () => {
           </li>
           <li
             className={`side_menu ${
-              value.activeBar === "parents" ? "active" : ""
+              value.activeBar == "parents" ? "active" : ""
             }`}
           >
             <div
@@ -201,7 +201,7 @@ const SideBar = () => {
           </li>
           <li
             className={`side_menu ${
-              value.activeBar === "acconunt" ? "active" : ""
+              value.activeBar == "acconunt" ? "active" : ""
             }`}
           >
             <div
@@ -253,7 +253,7 @@ const SideBar = () => {
           </li>
           {/* <li
             className={`side_menu ${
-              value.activeBar === "exam" ? "active" : ""
+              value.activeBar == "exam" ? "active" : ""
             }`}
           >
             <div className="inner_menu" onClick={() => handleSideMenu("exam")}>
@@ -289,7 +289,7 @@ const SideBar = () => {
           </li> */}
           <li
             className={`side_menu ${
-              value.activeBar === "notice" ? "active" : ""
+              value.activeBar == "notice" ? "active" : ""
             }`}
           >
             <div
@@ -304,7 +304,7 @@ const SideBar = () => {
           </li>
           <li
             className={`side_menu ${
-              value.activeBar === "message" ? "active" : ""
+              value.activeBar == "message" ? "active" : ""
             }`}
             onClick={() => handleSideMenu("message")}
           >
