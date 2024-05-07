@@ -82,7 +82,46 @@ const Message = () => {
   };
 
   // creating sample message box
+  const Messages = () => {
+    let allMessages = [];
+    const messageType = ["sent", "recieved"];
+    const timings = [
+      "10:00 AM",
+      "12:00 PM",
+      "01:00 PM",
+      "10:30 AM",
+      "05:00 PM",
+    ];
+    const messages = [
+      "hi",
+      "simple message",
+      `Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
+       impedit voluptatem, perferendis vel doloremque eligendi
+       quas. Reprehenderit vitae quidem dolore iure quasi, quas,
+       ullam, maxime sequi aliquid architecto fuga sed?`,
+    ];
+    for (let i = 0; i < 10; i++) {
+      let type = messageType[Math.floor(Math.random() * messageType.length)];
+      let msg = messages[Math.floor(Math.random() * messages.length)];
+      let time = timings[Math.floor(Math.random() * timings.length)];
+      let data = {
+        type,
+        msg,
+        time,
+      };
 
+      allMessages.push(data);
+    }
+
+    return allMessages.map((message, index) => {
+      return (
+        <li key={index} className={`msg ${message.type}Msg`}>
+          {message.msg}
+          <span className="time">{message.time}</span>
+        </li>
+      );
+    });
+  };
   // return the message component
   return (
     <>
@@ -131,29 +170,7 @@ const Message = () => {
                 </div>
                 <ul className="convo_box">
                   <li className="msg info">info message</li>
-                  <li className="msg recievedMsg">
-                    Hi
-                    <span className="time">11:00 AM</span>
-                  </li>
-                  <li className="msg sentMsg">
-                    Hi
-                    <span className="time">11:00 AM</span>
-                  </li>
-                  <li className="msg recievedMsg">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-                    impedit voluptatem, perferendis vel doloremque eligendi
-                    quas. Reprehenderit vitae quidem dolore iure quasi, quas,
-                    ullam, maxime sequi aliquid architecto fuga sed?
-                    <span className="time">11:00 AM</span>
-                  </li>
-                  <li className="msg sentMsg">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Minima, numquam? Ratione debitis molestiae quam,
-                    necessitatibus saepe dolorum modi ipsam veritatis.
-                    Perferendis doloribus voluptas quos quae qui? Facere, esse.
-                    Sequi, perferendis.
-                    <span className="time">11:00 AM</span>
-                  </li>
+                  <Messages />
                 </ul>
                 <div className="message_send_box">
                   <div className="input_box">
