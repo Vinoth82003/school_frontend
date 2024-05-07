@@ -73,7 +73,7 @@ ul {
   position: relative;
 }
 
-.search {
+.contact_top .search {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -81,7 +81,7 @@ ul {
   position: relative;
 }
 
-.search input {
+.contact_top .search input {
   width: calc(100% - 5px);
   padding: 10px;
   background: #fff;
@@ -266,7 +266,6 @@ ul.convo_box {
   border-radius: 10px;
   padding: 10px;
   max-width: 60%;
-  min-width: 200px;
 }
 
 .info {
@@ -344,4 +343,35 @@ button.inp-icon:hover {
   border: none;
   color: #6b6b6b;
   cursor: pointer;
+}
+
+.btn-text {
+  margin-top: 100px;
+  font-size: 14px;
+  padding: 10px;
+  background: #484848;
+  color: #fff;
+  border-radius: 5px;
+  display: none;
+}
+
+@keyframes move_up {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.msg_opt:hover .btn-text {
+  display: block;
+  animation: move_up 0.3s ease-in forwards;
+  z-index: 100;
+}
+
+.message_top .options {
+  margin-right: 20px;
 }
