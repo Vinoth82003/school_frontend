@@ -200,12 +200,14 @@ ul {
 .message_top {
   padding: 10px;
   border-bottom: 2px solid #d0d0d0;
+  box-shadow: 0px 3px 5px #d2d2d2;
 }
 
 .chat_message {
-  max-width: calc(100% - 255px);
-  width: calc(100% - 255px);
-  margin-left: 5px;
+  max-width: calc(100% - 235px);
+  width: calc(100% - 235px);
+  position: relative;
+  z-index: 100;
 }
 
 .message_top {
