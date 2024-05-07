@@ -127,39 +127,26 @@ const Message = () => {
                 <ul className="convo_box">
                   <li className="msg info">info message</li>
                   <li className="msg recievedMsg">
-                    this is the 1st message from he my frient
-                    <span className="time">11:00 AM</span>
-                  </li>
-                  <li className="msg recievedMsg">
-                    this is the 1st message from he my frient
+                    Hi
                     <span className="time">11:00 AM</span>
                   </li>
                   <li className="msg sentMsg">
-                    this is the message sent to my frient this is the 1st
-                    message from he my frient this is the 1st message from he my
-                    frient this is the 1st message from he my frient
+                    Hi
                     <span className="time">11:00 AM</span>
                   </li>
                   <li className="msg recievedMsg">
-                    this is the 1st message from he my frient
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
+                    impedit voluptatem, perferendis vel doloremque eligendi
+                    quas. Reprehenderit vitae quidem dolore iure quasi, quas,
+                    ullam, maxime sequi aliquid architecto fuga sed?
                     <span className="time">11:00 AM</span>
                   </li>
                   <li className="msg sentMsg">
-                    this is the 1st message from he my frient
-                    <span className="time">11:00 AM</span>
-                  </li>
-                  <li className="msg recievedMsg">
-                    this is the 1st message from he my frient
-                    <span className="time">11:00 AM</span>
-                  </li>
-                  <li className="msg sentMsg">
-                    this is the 1st message from he my frient
-                    <span className="time">11:00 AM</span>
-                  </li>
-                  <li className="msg recievedMsg">
-                    this is the message sent to my frient this is the 1st
-                    message from he my frient this is the 1st message from he my
-                    frient this is the 1st message from he my frient
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Minima, numquam? Ratione debitis molestiae quam,
+                    necessitatibus saepe dolorum modi ipsam veritatis.
+                    Perferendis doloribus voluptas quos quae qui? Facere, esse.
+                    Sequi, perferendis.
                     <span className="time">11:00 AM</span>
                   </li>
                 </ul>
