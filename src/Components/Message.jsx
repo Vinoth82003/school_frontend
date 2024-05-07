@@ -46,13 +46,18 @@ const Message = () => {
 
     return contacts.map((contact, index) => {
       return (
-        <li
-          key={index}
-          className={`contact list ${
-            contact.cisBlocked ? "blocked" : "unblocked"
-          }`}
-        >
-          <div className="inner_contact">
+        <li key={index} className={`contact list `}>
+          {contact.cisBlocked ? (
+            <span className="blocked_txt">blocked</span>
+          ) : (
+            ""
+          )}
+
+          <div
+            className={`inner_contact ${
+              contact.cisBlocked ? "blocked" : "unblocked"
+            }`}
+          >
             <div className="user_profile">
               <img src={contact.cPhoto} alt="user profile" />
             </div>
@@ -62,9 +67,13 @@ const Message = () => {
             </div>
             <div className="time_count">
               <p className="time">{contact.cTimes}</p>
-              <div className="count">
-                {contact.cCounts < 10 ? "0" + contact.cCounts : contact.cCounts}
-              </div>
+              {contact.cisBlocked ? null : (
+                <div className="count">
+                  {contact.cCounts < 10
+                    ? "0" + contact.cCounts
+                    : contact.cCounts}
+                </div>
+              )}
             </div>
           </div>
         </li>
@@ -113,10 +122,6 @@ const Message = () => {
                     <button className="msg_opt">
                       <FontAwesomeIcon icon={faUserAltSlash} />
                       <span className="btn-text">block</span>
-                    </button>
-                    <button className="msg_opt">
-                      <FontAwesomeIcon icon={faExclamationTriangle} />
-                      <span className="btn-text">report</span>
                     </button>
                     <button className="msg_opt">
                       <FontAwesomeIcon icon={faExclamationTriangle} />
