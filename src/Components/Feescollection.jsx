@@ -5,7 +5,7 @@ import photo2 from "../img/student11 (1).png";
 const Feescollection = () => {
   const [currentEndPoint, setCurrentEndPoint] = useState(50);
   const [currentStartPoint, setCurrentStartPoint] = useState(1);
-  const [totalStudent, setTotalStudents] = useState(500);
+  const totalStudent = 500;
   // table data
   // setTotalStudents(50);
   const TableData = () => {
