@@ -9,7 +9,9 @@ import {
   faCalendarDay,
   faClipboardQuestion,
   faEnvelope,
+  faMaximize,
   faMessage,
+  faMinimize,
   faSignOut,
   faTimes,
   faUserGear,
@@ -26,9 +28,35 @@ const Navbar = () => {
   const value = useContext(AppContext);
   const [activeMenu, setActiveMenu] = useState(null);
   const [isActive, setActive] = useState(false);
+  const [isMaximize, toggleMaximize] = useState(false);
 
   const toggleActiveMenu = (index) => {
     setActiveMenu(activeMenu === index ? null : index);
+  };
+
+  const MaximizeScreen = () => {
+    toggleMaximize(!isMaximize);
+    if (!isMaximize) {
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+      } else if (document.documentElement.webkitRequestFullscreen) {
+        /* Safari */
+        document.documentElement.webkitRequestFullscreen();
+      } else if (document.documentElement.msRequestFullscreen) {
+        /* IE11 */
+        document.documentElement.msRequestFullscreen();
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        /* Safari */
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) {
+        /* IE11 */
+        document.msExitFullscreen();
+      }
+    }
   };
 
   return (
@@ -253,6 +281,22 @@ const Navbar = () => {
                     </div>
                   </li>
                 </ul>
+              </div>
+            </div>
+          </li>
+          <li className="menu_list">
+            <div
+              className={`inner_menu_list small_menu notification `}
+              onClick={MaximizeScreen}
+            >
+              <div className="menu">
+                <div className="menu_icon">
+                  {isMaximize ? (
+                    <FontAwesomeIcon icon={faMinimize} />
+                  ) : (
+                    <FontAwesomeIcon icon={faMaximize} />
+                  )}
+                </div>
               </div>
             </div>
           </li>
