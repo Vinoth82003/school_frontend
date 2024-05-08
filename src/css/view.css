@@ -26,6 +26,41 @@
   height: 100%;
   flex-basis: 25%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.view_options {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 15px;
+  margin-top: 10px;
+}
+
+.view_options button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.download {
+  --clr: green;
+}
+
+.print {
+  --clr: purple;
+}
+
+.view_options button:hover {
+  transition: all 0.3s;
+  background: var(--clr);
+  color: #fff;
 }
 
 .right_content {
@@ -67,9 +102,21 @@
   }
 }
 
+@media screen and (max-width: 720px) {
+  .inner_view {
+    flex-direction: column;
+  }
+  .left_image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 @media screen and (max-width: 656px) {
   .view_section {
-    width: 550px;
+    min-width: 320px;
   }
 }
 
