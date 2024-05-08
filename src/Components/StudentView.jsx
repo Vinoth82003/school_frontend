@@ -2,7 +2,11 @@ import React from "react";
 import defaultPhoto from "../img/default.jpeg";
 import "../css/view.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFileDownload, faPrint } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEdit,
+  faFileDownload,
+  faPrint,
+} from "@fortawesome/free-solid-svg-icons";
 
 const StudentView = () => {
   return (
@@ -16,9 +20,15 @@ const StudentView = () => {
                 <div className="view_options">
                   <button type="button" className="download">
                     <FontAwesomeIcon icon={faFileDownload} />
+                    <span className="btn-txt">download</span>
                   </button>
                   <button type="button" className="print">
                     <FontAwesomeIcon icon={faPrint} />
+                    <span className="btn-txt">print</span>
+                  </button>
+                  <button type="button" className="edit">
+                    <FontAwesomeIcon icon={faEdit} />
+                    <span className="btn-txt">edit</span>
                   </button>
                 </div>
               </div>

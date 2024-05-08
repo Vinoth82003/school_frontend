@@ -4,13 +4,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalculator,
   faChalkboardTeacher,
+  faCircleUser,
   faDashboard,
+  faEye,
   faGraduationCap,
   faListDots,
   faMessage,
   faMoneyBillTransfer,
   faMoneyBillTrendUp,
   faPlus,
+  faUser,
+  faUserCircle,
   faUserGraduate,
   faUserGroup,
   faUserPlus,
@@ -19,6 +23,7 @@ import "../css/sidebar.css";
 import { faUserCheck } from "@fortawesome/free-solid-svg-icons/faUserCheck";
 import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons/faPeopleGroup";
 import { faMoneyBills } from "@fortawesome/free-solid-svg-icons/faMoneyBills";
+import { faStreetView } from "@fortawesome/free-solid-svg-icons/faStreetView";
 
 const SideBar = () => {
   const value = useContext(AppContext);
@@ -97,6 +102,22 @@ const SideBar = () => {
               </li>
               <li
                 className="sub_menu_li"
+                onClick={() => handleMenuClick(["students", "all student"])}
+              >
+                <div className="inner_submenu">
+                  <div className="submenu_icon">
+                    <div className="big_icon">
+                      <FontAwesomeIcon icon={faUser} />
+                    </div>
+                    <div className="inner_icon_small">
+                      <FontAwesomeIcon icon={faEye} />
+                    </div>
+                  </div>
+                  <p className="submenu_text">View Student</p>
+                </div>
+              </li>
+              <li
+                className="sub_menu_li"
                 onClick={() =>
                   handleMenuClick(["students", "Student Promotion"])
                 }
@@ -145,6 +166,22 @@ const SideBar = () => {
                     <FontAwesomeIcon icon={faUserPlus} />
                   </div>
                   <p className="submenu_text">Add Teacher</p>
+                </div>
+              </li>
+              <li
+                className="sub_menu_li"
+                onClick={() => handleMenuClick(["teachers", "all teacher"])}
+              >
+                <div className="inner_submenu">
+                  <div className="submenu_icon">
+                    <div className="big_icon">
+                      <FontAwesomeIcon icon={faUser} />
+                    </div>
+                    <div className="inner_icon_small">
+                      <FontAwesomeIcon icon={faEye} />
+                    </div>
+                  </div>
+                  <p className="submenu_text">View teacher</p>
                 </div>
               </li>
               <li
