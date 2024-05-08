@@ -81,7 +81,7 @@ ul.sidebar {
 
 .side_menu.active .sub_menu {
   transition: all 0.5s;
-  height: 150px;
+  height: 200px;
 }
 .side_menu.active .small_submenu {
   transition: all 0.5s;
@@ -118,6 +118,7 @@ ul.sidebar {
   overflow: hidden;
   display: inline-block;
   text-wrap: nowrap;
+  text-transform: capitalize;
 }
 .sidebar.active .side_text,
 .sidebar.active .submenu_text {
@@ -146,4 +147,13 @@ ul.sidebar {
 
 .sidebar.active .side_text {
   color: #fff;
+}
+
+.inner_icon_small {
+  font-size: 9px;
+  position: relative;
+}
+
+.big_icon {
+  margin-left: 2px;
 }
