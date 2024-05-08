@@ -87,6 +87,10 @@ ul.sidebar {
   transition: all 0.5s;
   height: 90px;
 }
+.side_menu.active .menu-3 {
+  transition: all 0.5s;
+  height: 150px;
+}
 
 .sub_menu_li {
   width: 85%;

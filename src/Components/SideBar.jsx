@@ -211,7 +211,7 @@ const SideBar = () => {
               </div>
               <div className="side_text">Parents</div>
             </div>
-            <ul className="sub_menu small_submenu">
+            <ul className="sub_menu small_submenu menu-3">
               <li
                 className="sub_menu_li"
                 onClick={() => handleMenuClick(["parents", "all parents"])}
@@ -234,6 +234,22 @@ const SideBar = () => {
                   <p className="submenu_text">Add Parent</p>
                 </div>
               </li>
+              <li
+                className="sub_menu_li"
+                onClick={() => handleMenuClick(["parents", "all parent"])}
+              >
+                <div className="inner_submenu">
+                  <div className="submenu_icon">
+                    <div className="big_icon">
+                      <FontAwesomeIcon icon={faUser} />
+                    </div>
+                    <div className="inner_icon_small">
+                      <FontAwesomeIcon icon={faEye} />
+                    </div>
+                  </div>
+                  <p className="submenu_text">View parent</p>
+                </div>
+              </li>
             </ul>
           </li>
           <li
@@ -250,7 +266,7 @@ const SideBar = () => {
               </div>
               <div className="side_text">Acconunt</div>
             </div>
-            <ul className="sub_menu">
+            <ul className="sub_menu menu-3">
               <li
                 className="sub_menu_li"
                 onClick={() =>
