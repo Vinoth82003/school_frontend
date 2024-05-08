@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalculator,
   faChalkboardTeacher,
-  faCircleUser,
   faDashboard,
   faEye,
   faGraduationCap,
@@ -14,7 +13,6 @@ import {
   faMoneyBillTrendUp,
   faPlus,
   faUser,
-  faUserCircle,
   faUserGraduate,
   faUserGroup,
   faUserPlus,
@@ -23,7 +21,6 @@ import "../css/sidebar.css";
 import { faUserCheck } from "@fortawesome/free-solid-svg-icons/faUserCheck";
 import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons/faPeopleGroup";
 import { faMoneyBills } from "@fortawesome/free-solid-svg-icons/faMoneyBills";
-import { faStreetView } from "@fortawesome/free-solid-svg-icons/faStreetView";
 
 const SideBar = () => {
   const value = useContext(AppContext);
