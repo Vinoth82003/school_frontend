@@ -1,6 +1,8 @@
 import React from "react";
 import defaultPhoto from "../img/default.jpeg";
 import "../css/view.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFileDownload, faPrint } from "@fortawesome/free-solid-svg-icons";
 
 const StudentView = () => {
   return (
@@ -11,6 +13,14 @@ const StudentView = () => {
             <div className="inner_view">
               <div className="left_image">
                 <img src={defaultPhoto} alt="" />
+                <div className="view_options">
+                  <button type="button" className="download">
+                    <FontAwesomeIcon icon={faFileDownload} />
+                  </button>
+                  <button type="button" className="print">
+                    <FontAwesomeIcon icon={faPrint} />
+                  </button>
+                </div>
               </div>
               <div className="right_content">
                 <div className="cnt-row">
