@@ -1,5 +1,5 @@
 import React from "react";
-import defaultPhoto from "../img/default.jpeg";
+import defaultPhoto from "../img/student1.jpg";
 import "../css/view.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
