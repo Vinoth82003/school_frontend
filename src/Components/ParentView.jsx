@@ -1,5 +1,5 @@
 import React from "react";
-import defaultPhoto from "../img/default.jpeg";
+import defaultPhoto from "../img/parents.jpg";
 import "../css/view.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -80,7 +80,7 @@ const ParentView = () => {
                       <p className="viewName">jonhnhenrydoe@gmail.com</p>
                     </div>
                     <div className="inner-cnt childrens">
-                      <h4 className="lable">Childrens :</h4> 
+                      <h4 className="lable">Childrens :</h4>
                       <ol>
                         <li>
                           <h5>John doe</h5>
