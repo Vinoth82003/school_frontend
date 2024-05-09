@@ -8,7 +8,7 @@ import {
   faPaperPlane,
   faPaperclip,
   faSearch,
-  faSmile,
+  faTrashAlt,
   faUserAltSlash,
 } from "@fortawesome/free-solid-svg-icons";
 import photo1 from "../img/student11 (1).png";
@@ -124,7 +124,10 @@ const Message = () => {
       return (
         <li key={index} className={`msg ${message.type}Msg`}>
           {message.msg}
-          <span className="time">{message.time}</span>
+          <button type="button" className="delete">
+            <FontAwesomeIcon icon={faTrashAlt} />
+          </button>
+          <span className="time">{message.time} </span>
         </li>
       );
     });
@@ -193,9 +196,6 @@ const Message = () => {
                     </button>
                   </div>
                   <div className="msg_opts">
-                    <button type="button" className="file_input">
-                      <FontAwesomeIcon icon={faSmile} />
-                    </button>
                     <button type="button" className="file_input">
                       <FontAwesomeIcon icon={faPaperclip} />
                     </button>

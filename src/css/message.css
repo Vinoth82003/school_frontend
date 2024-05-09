@@ -309,16 +309,38 @@ ul.convo_box {
   position: absolute;
 }
 
+.msg .delete {
+  position: absolute;
+  display: none;
+  padding: 5px;
+  bottom: 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: red;
+}
+
+.msg:hover .delete {
+  display: block;
+}
+
 .recievedMsg .time {
   right: -55px;
   bottom: -17px;
   bottom: 0;
+}
+.recievedMsg .delete {
+  right: -20px;
 }
 
 .sentMsg .time {
   left: -55px;
   bottom: -17px;
   bottom: 0;
+}
+
+.sentMsg .delete {
+  left: -20px;
 }
 
 .message_send_box {
