@@ -154,3 +154,15 @@ main.admin_page {
 .cnt-row .bio {
   padding: 10px;
 }
+
+.childrens {
+  flex-direction: column;
+}
+
+.childrens ol {
+  margin-left: 50px;
+}
+
+.childrens ol h5 {
+  text-transform: capitalize;
+}
