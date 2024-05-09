@@ -112,6 +112,17 @@ span.btn-txt {
   white-space: nowrap;
 }
 
+.inner-cnt h4 {
+  color: #1e1d1ddd;
+  font-weight: 400;
+  width: 120px;
+}
+
+.inner-cnt .viewName {
+  color: #000000dd;
+  font-weight: 600;
+}
+
 @media screen and (max-width: 1020px) {
   .cnt-col {
     width: calc(100% / 2.5);
@@ -121,6 +132,9 @@ span.btn-txt {
 @media screen and (max-width: 940px) {
   .cnt-col {
     width: calc(100%);
+  }
+  .inner-cnt h4 {
+    width: 120px;
   }
 }
 
@@ -165,4 +179,10 @@ main.admin_page {
 
 .childrens ol h5 {
   text-transform: capitalize;
+}
+
+.left_image {
+  min-height: 300px;
+  padding: 10px;
+  /* background: rgb(207, 239, 207); */
 }
