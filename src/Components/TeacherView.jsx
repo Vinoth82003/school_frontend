@@ -1,5 +1,5 @@
 import React from "react";
-import defaultPhoto from "../img/default.jpeg";
+import defaultPhoto from "../img/teacher.jpg";
 import "../css/view.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -50,18 +50,8 @@ const Teacheriew = () => {
                       <p className="viewName">Student_0002</p>
                     </div>
                     <div className="inner-cnt">
-                      <h4 className="lable">Roll</h4> :
-                      <p className="viewName">#0002</p>
-                    </div>
-                  </div>
-                  <div className="cnt-col">
-                    <div className="inner-cnt">
-                      <h4 className="lable">Class</h4> :
-                      <p className="viewName">12</p>
-                    </div>
-                    <div className="inner-cnt">
-                      <h4 className="lable">Section</h4> :
-                      <p className="viewName">B</p>
+                      <h4 className="lable">Gender</h4> :
+                      <p className="viewName">Male</p>
                     </div>
                   </div>
                   <div className="cnt-col">
@@ -90,8 +80,8 @@ const Teacheriew = () => {
                       <p className="viewName">Hindu</p>
                     </div>
                     <div className="inner-cnt">
-                      <h4 className="lable">Occupation</h4> :
-                      <p className="viewName">Farmer</p>
+                      <h4 className="lable">ID</h4> :
+                      <p className="viewName">#1001</p>
                     </div>
                   </div>
                   <div className="cnt-col">
@@ -100,18 +90,18 @@ const Teacheriew = () => {
                       <p className="viewName">johndoe@example.com</p>
                     </div>
                     <div className="inner-cnt">
-                      <h4 className="lable">Admission ID</h4> :
-                      <p className="viewName">#1001</p>
+                      <h4 className="lable">Phone</h4> :
+                      <p className="viewName">+91 9109876542</p>
                     </div>
                   </div>
                   <div className="cnt-col">
                     <div className="inner-cnt">
-                      <h4 className="lable">Roll</h4> :
-                      <p className="viewName">MTMHSS_0002</p>
+                      <h4 className="lable">Joining Date</h4> :
+                      <p className="viewName">11/11/2011</p>
                     </div>
                     <div className="inner-cnt">
-                      <h4 className="lable">Phone</h4> :
-                      <p className="viewName">+91 9109876542</p>
+                      <h4 className="lable">Subject</h4> :
+                      <p className="viewName">Mathematics</p>
                     </div>
                   </div>
                   <div className="cnt-col">
