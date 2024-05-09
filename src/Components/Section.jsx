@@ -17,6 +17,7 @@ import Notice from "./Notice";
 import Message from "./Message";
 import StudentView from "./StudentView";
 import TeacherView from "./TeacherView";
+import ParentView from "./ParentView";
 
 const Section = () => {
   const value = useContext(AppContext);
@@ -64,6 +65,7 @@ const Section = () => {
           {active === "message" && <Message />}
           {active === "view student" && <StudentView />}
           {active === "view teacher" && <TeacherView />}
+          {active === "view parent" && <ParentView />}
         </header>
       </section>
     </>
