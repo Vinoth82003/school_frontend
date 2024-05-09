@@ -398,3 +398,32 @@ button.inp-icon:hover {
 .message_top .options {
   margin-right: 20px;
 }
+
+.back {
+  display: none;
+}
+
+@media screen and (max-width: 850px) {
+  .chat_message {
+    position: absolute;
+    z-index: 1;
+    max-width: calc(100%);
+    width: calc(100%);
+  }
+
+  .chat_contact {
+    width: 100%;
+    background: #fff;
+    border-right: none;
+    position: relative;
+    z-index: 10;
+  }
+
+  .inner_message_box.active .res-contact {
+    z-index: -1;
+  }
+
+  .back {
+    display: inline-block;
+  }
+}
