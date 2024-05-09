@@ -233,7 +233,7 @@ const SideBar = () => {
               </li>
               <li
                 className="sub_menu_li"
-                onClick={() => handleMenuClick(["parents", "all parent"])}
+                onClick={() => handleMenuClick(["parents", "view parent"])}
               >
                 <div className="inner_submenu">
                   <div className="submenu_icon">
