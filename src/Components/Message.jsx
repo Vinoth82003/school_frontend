@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/message.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faArrowLeft,
   faCameraAlt,
   faExclamationTriangle,
   faPaperPlane,
@@ -16,6 +17,7 @@ import photo3 from "../img/student12.png";
 import photo4 from "../img/student13.png";
 
 const Message = () => {
+  const [ischat, handleChat] = useState(false);
   // creating the contact list
   const ContactList = () => {
     let contacts = [];
@@ -46,7 +48,12 @@ const Message = () => {
 
     return contacts.map((contact, index) => {
       return (
-        <li key={index} className={`contact list `}>
+        <li
+          key={index}
+          className={`contact list `}
+          onClick={contact.cisBlocked ? null : () => handleChat(true)}
+          // {contact.cisBlocked &&  onClick={() => handleChat(false)}}
+        >
           {contact.cisBlocked ? (
             <span className="blocked_txt">blocked</span>
           ) : (
@@ -128,8 +135,8 @@ const Message = () => {
       <main className="admin_page">
         <section className="chart_containers">
           <div className="message_box">
-            <div className="inner_message_box">
-              <div className="chat_contact">
+            <div className={`inner_message_box ${ischat ? "active" : null}`}>
+              <div className="chat_contact res-contact">
                 <div className="contact_top">
                   <div className="search">
                     <input
@@ -165,6 +172,12 @@ const Message = () => {
                     <button className="msg_opt">
                       <FontAwesomeIcon icon={faExclamationTriangle} />
                       <span className="btn-text">report</span>
+                    </button>
+                    <button
+                      className="msg_opt back"
+                      onClick={() => handleChat(false)}
+                    >
+                      <FontAwesomeIcon icon={faArrowLeft} />
                     </button>
                   </div>
                 </div>
