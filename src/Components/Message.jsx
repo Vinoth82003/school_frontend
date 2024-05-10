@@ -8,6 +8,7 @@ import {
   faPaperPlane,
   faPaperclip,
   faSearch,
+  faTimesCircle,
   faTrashAlt,
   faUserAltSlash,
 } from "@fortawesome/free-solid-svg-icons";
@@ -17,8 +18,44 @@ import photo3 from "../img/student12.png";
 import photo4 from "../img/student13.png";
 
 const Message = () => {
-  const [ischat, handleChat] = useState(false);
-  // creating the contact list
+  const [isChat, setIsChat] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [isPreview, setPreview] = useState(false);
+  const handleFileChange = () => {
+    let inputFile = document.querySelector("#fileInput");
+    console.log(inputFile);
+    const file = inputFile.files[0];
+    setSelectedFile(file);
+    setPreview(true);
+  };
+
+  const openFile = () => {
+    let inputFile = document.querySelector("#fileInput");
+    // inputFile.style.display = "inline-block";
+    inputFile.click();
+  };
+
+  const renderFileDetails = () => {
+    if (selectedFile) {
+      return (
+        <ul className="file_details">
+          <li>
+            <h5>File Name :</h5>
+            <p className="file_name">{selectedFile.name}</p>
+          </li>
+          <li>
+            <h5>File size :</h5>
+            <p className="file_size">
+              {(selectedFile.size / (1024 * 1024)).toFixed(2)} MB
+            </p>
+          </li>
+        </ul>
+      );
+    } else {
+      return <p className="no_file">No file selected</p>;
+    }
+  };
+
   const ContactList = () => {
     let contacts = [];
     let name = ["John Doe", "Lorem Ispum", "Milly Jane", "Henry Jones"];
@@ -51,8 +88,7 @@ const Message = () => {
         <li
           key={index}
           className={`contact list `}
-          onClick={contact.cisBlocked ? null : () => handleChat(true)}
-          // {contact.cisBlocked &&  onClick={() => handleChat(false)}}
+          onClick={contact.cisBlocked ? null : () => setIsChat(true)}
         >
           {contact.cisBlocked ? (
             <span className="blocked_txt">blocked</span>
@@ -88,7 +124,6 @@ const Message = () => {
     });
   };
 
-  // creating sample message box
   const Messages = () => {
     let allMessages = [];
     const messageType = ["sent", "recieved"];
@@ -132,13 +167,19 @@ const Message = () => {
       );
     });
   };
-  // return the message component
+
   return (
     <>
       <main className="admin_page">
         <section className="chart_containers">
+          <input
+            type="file"
+            name="file"
+            id="fileInput"
+            onChange={() => handleFileChange(this)}
+          />
           <div className="message_box">
-            <div className={`inner_message_box ${ischat ? "active" : null}`}>
+            <div className={`inner_message_box ${isChat ? "active" : null}`}>
               <div className="chat_contact res-contact">
                 <div className="contact_top">
                   <div className="search">
@@ -178,7 +219,7 @@ const Message = () => {
                     </button>
                     <button
                       className="msg_opt back"
-                      onClick={() => handleChat(false)}
+                      onClick={() => setIsChat(false)}
                     >
                       <FontAwesomeIcon icon={faArrowLeft} />
                     </button>
@@ -188,6 +229,33 @@ const Message = () => {
                   <li className="msg info">info message</li>
                   <Messages />
                 </ul>
+                <div className={`preview_box ${isPreview ? "active" : null}`}>
+                  <div className="preview_header">
+                    <h2>Preview</h2>
+                    <ul className="options">
+                      <li>
+                        <button
+                          type="button"
+                          className="close"
+                          onClick={() => setPreview(false)}
+                        >
+                          <FontAwesomeIcon icon={faTimesCircle} />
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="preview_file">
+                    <div className="display_file">
+                      {selectedFile && (
+                        <img
+                          src={URL.createObjectURL(selectedFile)}
+                          alt="File Preview"
+                        />
+                      )}
+                    </div>
+                    {renderFileDetails()}
+                  </div>
+                </div>
                 <div className="message_send_box">
                   <div className="input_box">
                     <input type="text" id="sendMsg" className="sendMsg" />
@@ -196,7 +264,11 @@ const Message = () => {
                     </button>
                   </div>
                   <div className="msg_opts">
-                    <button type="button" className="file_input">
+                    <button
+                      type="button"
+                      className="file_input"
+                      onClick={openFile}
+                    >
                       <FontAwesomeIcon icon={faPaperclip} />
                     </button>
                     <button type="button" className="file_input">
