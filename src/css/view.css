@@ -169,12 +169,8 @@ main.admin_page {
   padding: 10px;
 }
 
-.childrens {
-  flex-direction: column;
-}
-
 .childrens ol {
-  margin-left: 50px;
+  margin-left: 10px;
 }
 
 .childrens ol h5 {
