@@ -8,7 +8,6 @@ import {
   faEye,
   faGraduationCap,
   faListDots,
-  faMessage,
   faMoneyBillTransfer,
   faMoneyBillTrendUp,
   faPlus,
