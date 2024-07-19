@@ -352,19 +352,6 @@ const SideBar = () => {
               <div className="side_text">Notice</div>
             </div>
           </li>
-          <li
-            className={`side_menu ${
-              value.activeBar === "message" ? "active" : ""
-            }`}
-            onClick={() => handleSideMenu("message")}
-          >
-            <div className="inner_menu">
-              <div className="side_icon">
-                <FontAwesomeIcon icon={faMessage} />
-              </div>
-              <div className="side_text">Messages</div>
-            </div>
-          </li>
         </ul>
       </aside>
     </>
